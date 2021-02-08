@@ -12,6 +12,7 @@
     catch(PDOException $e){
       echo "erreur : " .$e->getMessage();
     }
+    
 ?>
 
 
@@ -151,6 +152,7 @@
   <li>
     <a class="nav-link text-white text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
   </li>
+
 
   <?php
   require_once "controller/footer.controller.php"

@@ -4,6 +4,7 @@
 ?>
 
 
+
 <!doctype html>
 <html lang="fr">
 
@@ -26,7 +27,7 @@
   <div class="container mt-">
     <div class="site-title">
       <h1>Homecamping.com</h1>
-      <p>Annonce caravane</p>
+      <p>Annonce caravane test</p>
     </div>
   </div>
 
