@@ -1,0 +1,200 @@
+h1{
+   font-size: 2rem;
+   margin-bottom: 2rem;
+  
+}
+
+h2{
+    font-size: 1rem;
+    font-family:URW Chancery L, cursive;
+    
+        
+}
+
+body{
+    background-color: rgb(177, 177, 154);
+}
+
+
+.inscription{
+
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.essai{
+    text-align: center;
+    border-bottom: 1px solid #111111;
+   
+}
+
+
+
+.imgIndex{
+    width: 100%;
+
+}
+
+
+.mail{
+    color: black;
+}
+
+.imgNav{
+    height: 5rem;
+    width: 10rem;
+}
+
+.row{
+    margin-top: 1rem;
+   
+}
+
+.imgArticle1{
+    height: 10rem;
+    width: 20rem;
+}
+
+.imgarticle2{
+    width: 20rem;
+    height: 10rem;
+}
+.imgArticle3{
+    
+    height: 20rem;
+}
+
+.imgPageAdmin{
+    background-image: url(../assets/img/http.jpg);
+}
+
+.imgGal1{
+    height: 10rem;
+    margin-top: 3rem;
+}
+
+.imgConnexion{
+    height: 10rem;
+}
+
+.imgFond{
+    background-image: url(../assets/img/fond.jpg);
+}
+
+
+.annonce{
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: underline;
+}
+.formAnnonce{
+    
+    
+    height: 30rem;
+    
+}
+
+#imgPreview {
+	width: 200px; 
+	max-height: auto;
+	display: block;
+	margin-bottom: 70px;
+	
+}
+
+
+.imgFondAnnonce{
+    height: 25rem;
+    
+}
+.imgFondDepose{
+    height: 25rem;
+    width: 25rem;
+    margin-top: 4rem;
+    
+}
+.imgFondConnexion{
+    height: 25rem;
+    width: 25rem;
+    margin-top: 5rem;
+  
+    
+}
+
+.imgCrea{
+    height: 25rem;
+    margin-left: 10rem;
+    margin-top: 3rem;
+}
+
+
+/* -- main content -- */
+.container {
+    position: relative;
+    z-index: 0;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+  }
+  
+  .site-title {
+    text-align: center;
+    border-bottom: 1px solid #111111;
+    margin-bottom: 24px;
+  }
+  
+  .site-title h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    
+  }
+  
+  img {
+    width: 100%;
+  }
+
+  .bgCard{
+      background-color:rgb(177, 177, 154); 
+     
+  }
+ 
+  .textH1{
+    font-family:URW Chancery L, cursive;
+    letter-spacing: 5px;
+    text-align: center;
+ 
+  }
+  
+  .textNav{
+    font-family:Bradley Hand, cursive;
+    background-color: rgb(139, 139, 124);
+    
+  }
+
+  .news{
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 3rem;
+      
+  }
+
+  .article{
+      background-color:rgb(134, 134, 115); 
+  }
+
+  footer{
+    background-color: rgb(117, 117, 99);
+    margin-top: 5rem;
+  }
+
+.test{
+    text-align: center;
+}
+.btn{
+    color: black;
+}
+
