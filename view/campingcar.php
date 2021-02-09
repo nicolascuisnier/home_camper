@@ -1,7 +1,8 @@
 <?php
-  require_once "../controller/navBar.controller.php";
-  require_once "../controller/campingcar.controller.php";
- 
+require_once "../controller/navBar.controller.php";
+require_once "../controller/campingcar.controller.php";
+
+
 ?>
 
 <!doctype html>
@@ -22,29 +23,32 @@
     <div class="site-title">
       <h1>Homecamping.com</h1>
       <p>Annonce camping-car</p>
-  </div>
+    </div>
   </div>
 
   <div class="container">
     <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
       <div class="row no-gutters">
-        <div class="col-sm">
-          <img src="/assets/img/campingcar.jpg" class="card-img" alt="caravane ">
 
+      <?php
+      foreach($data_home_camping as $key => $value){?>
+        <div class="col-sm-4">
+          <img src="../data/images/<?=$data_home_camping[$key]["name_picture"]?>" class="card_Img card-img" alt="caravane ">
         </div>
         <div class="col-sm-8">
-          <div class=" test card-body">
-
-            <h5 class="card-title">Camping-car</h5>
-            <p>prix 11800 euros</p>
-
-            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#staticBackdrop">Descritpion</button>
+          <div class="text-Card card-body">
+            <h5 class="card-title"><?=$data_home_camping[$key]["title"]?></h5>
+            <p><?=$data_home_camping[$key]["price"]?><p>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">Descritpion</button>
           </div>
-        </div>
+          </div>
+     <?php }?>
+
+        
       </div>
     </div>
   </div>
-  
+
 
   <!-- Modal 1 -->
   <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -57,11 +61,11 @@
         </div>
         <div class="modal-body">
           <img src="/assets/img/campingcar1.jpg" alt="">
-          
+
         </div>
         <ul>
-        <li>Tarif</li>
-        <li>Année</li>
+          <li>Tarif</li>
+          <li>Année</li>
         </ul>
         <div class="modal-footer">
           <button class="btn btn-primary" type="button"><a class="text-white" href="mailto:nullepart@mozilla.org">Contacter le vendeur</a></button>
@@ -71,17 +75,17 @@
     </div>
   </div>
 
-    
 
 
 
-    <?php
-       require_once "../controller/footer.controller.php";
-    ?>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <?php
+  require_once "../controller/footer.controller.php";
+  ?>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

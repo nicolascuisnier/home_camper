@@ -65,8 +65,14 @@ body{
     height: 20rem;
 }
 
-.imgPageAdmin{
-    background-image: url(../assets/img/http.jpg);
+.card_Img{
+    
+    margin-top: 3rem;
+}
+
+.text-Card{
+    margin-top: 3rem;
+    margin-left: 10rem;
 }
 
 .imgGal1{
