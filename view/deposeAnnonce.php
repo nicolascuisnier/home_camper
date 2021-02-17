@@ -1,7 +1,7 @@
 <?php
-  require_once "../controller/navBar.controller.php";
-  require_once "../controller/deposeAnnonce.controller.php";
-  
+require_once "../controller/navBar.controller.php";
+require_once "../controller/deposeAnnonce.controller.php";
+
 ?>
 
 
@@ -29,31 +29,42 @@
 
 
   <div class="container mx-auto">
-    <div class="row text-center " >
+    <div class="row text-center ">
       <div class="col-6-sm mx-auto">
         <h1>Bienvenue!</h1>
         <p>Pour déposé une annonce connecté vous!</p>
         <div class=" mb-3 " style="max-width: 1000px;">
           <div class="row no-gutters ">
             <div class="col-md-4">
-           
+
             </div>
             <div class="col-md-20">
               <div class="card-body">
-                <form>
+
+
+                <form  method="POST" action="deposeAnnonce.php">
                   <div class="form-group">
-                    <label for="email">Adresse Mail</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+                    <label for="mail">Adresse Mail</label>
+                    <input type="text" class="form-control" id="mail" name="mail" aria-describedby="mail" value="<?= isset($_POST['mail']) ? isset($_POST['mail']) :"" ?>">
+                    <div class="text-danger">
+                      <span><?= isset($errorMessage["mail"]) ? $errorMessage["mail"] :"" ?></span>
+                    </div>
                   </div>
+
+
+
                   <div class="form-group">
                     <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" name="email" id="password" required>
+                    <input type="password" class="form-control" name="password" id="password" value="<?=isset($_POST['password']) ? isset($_POST['password']) :"" ?>">
+                    <div class="text-danger">
+                      <span><?= isset($errorMessage["password"]) ? $errorMessage["password"] :"" ?></span>
+                    </div>
                   </div>
                   <div class="mt-5">
-                  <a href="annonce.php"><button type="submit" class="btn btn-primary">se connecter</button></a>
+                    <a href="annonce.php"><button type="submit" class="btn btn-primary">se connecter</button></a>
                   </div>
                   <div class="mt-5">
-                  <p>Pas encore de compte?<a href="creationdecompte.php">cliquer ici</a></p>
+                    <p>Pas encore de compte?<a href="creationdecompte.php">cliquer ici</a></p>
                   </div>
                 </form>
               </div>
@@ -62,14 +73,14 @@
         </div>
       </div>
       <div class="col-6 ml-5">
-       <img src="../assets/img/campfeu.jpg" alt="">
+        <img src="../assets/img/campfeu.jpg" alt="">
       </div>
     </div>
   </div>
 
 
   <?php
-    require_once "../controller/footer.controller.php";
+  require_once "../controller/footer.controller.php";
   ?>
 
   <script src="/assets/script.js"></script>

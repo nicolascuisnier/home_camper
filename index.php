@@ -1,20 +1,7 @@
 <?php
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
+require_once "controller/index.controller.php";
 
-
-    try{
-      $conn = new PDO("mysql:host=$servername;dbname=home_camping",$username,$password);
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo'connexion réussie';
-    }
-    catch(PDOException $e){
-      echo "erreur : " .$e->getMessage();
-    }
-    
 ?>
-
 
 
 <!doctype html>

@@ -7,7 +7,8 @@
     "user" =>  'nicolas',
     "user_mail" => 'ncuisnier@gmail.com',
     "name_category" => 'caravane',
-    "name_picture" => 'caravaneZero.jpg'
+    "name_picture" => 'caravaneZero.jpg',
+    "date_ligne" =>"2021-01-13"
     ],
     
     [
@@ -17,7 +18,9 @@
      "user" =>  'marc',
      "user_mail" => 'marco@gmail.com',
      "name_category" => 'caravane',
-     "name_picture" => 'caravaneOne.jpg'
+     "name_picture" => 'caravaneOne.jpg',
+     "date_ligne" => "2021-01-13"
+     
     ],
     [
         "title" => 'caravane',
@@ -26,7 +29,9 @@
        "user" =>  'louis',
        "user_mail" => 'louiscloude@gmail.com',
        "name_category" => 'caravane',
-       "name_picture" => 'caravaneTwo.jpg'
+       "name_picture" => 'caravaneTwo.jpg',
+       "date_ligne" => "2021-01-13"
+      
       ],
 
       [
@@ -37,7 +42,9 @@
        "user" =>  'jean',
        "user_mail" => 'jeanjean@gmail.com',
        "name_category" => 'caravane',
-       "name_picture" => 'caravane4.jpg'
+       "name_picture" => 'caravane4.jpg',
+       "date_ligne" => "2021-01-13"
+      
       ],
 
     ];

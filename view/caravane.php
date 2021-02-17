@@ -76,6 +76,8 @@ require_once "../controller/caravane.controller.php";
           <ul>
             <li>Description </li><?= $data_home_camping[$key]["descrip"] ?>
             <li>Prix</li><?= $data_home_camping[$key]["price"] ?>
+           
+            
           </ul>
           <div class="modal-footer">
             <button class="btn btn-dark" type="button"><a class="text-white" href="mailto:nullepart@mozilla.org<?= $data_home_camping[$key]["user_mail"] ?>">Contacter le vendeur</a></button>

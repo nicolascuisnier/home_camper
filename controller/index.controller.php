@@ -1,5 +1,8 @@
 <?php
-    var_dump("ok");
-?>
+    require_once "models/database.php";
+   
+  
+    
+
 
 

@@ -13,11 +13,14 @@
   <body>
     <div class="text-center">
         <h1>Espace administrateur</h1>
+       
     </div>
 
+    <div>
+    <H1>Modifier un article</H1>
     
+    </div>
 
-    
 
 
     

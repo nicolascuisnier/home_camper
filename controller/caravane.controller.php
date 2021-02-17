@@ -1,6 +1,4 @@
 <?php
-     require_once "../data/home_campin_data.php";
+    require_once "../models/database.php";
 
 
-
-?>

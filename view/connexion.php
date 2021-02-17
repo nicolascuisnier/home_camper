@@ -1,6 +1,7 @@
 <?php
 require_once "../controller/navBar.controller.php";
 require_once "../controller/connexion.controller.php";
+require_once "../controller/connexion.controller.php";
 ?>
 
 <!doctype html>
@@ -42,19 +43,31 @@ require_once "../controller/connexion.controller.php";
                                 <div class="form">
                                     <div class="form-group">
                                         <label for="mail">Adresse mail</label>
-                                        <input type="email" name="mail" class="form-control" id="mail" aria-describedby="emailHelp" required>
+                                        <input type="email" name="mail" class="form-control" id="mail" aria-describedby="emailHelp"value="<?=isset($_POST['mail']) ? isset($_POST['mail']) : "" ?>">
+                                        <div class="text-danger">
+                                    <span><?= isset($errorMessage["mail"]) ? $errorMessage["mail"] : "" ?></span>
                                     </div>
+                                    </div>
+                                   
+
+
+
+
                                     <div class="form-group">
                                         <label for="password">Mot de passe</label>
-                                        <input type="password" name="password" class="form-control" id="password" required>
-                                        <a href="Mot de pass">Mot de passe oublier</a>
+                                        <input type="password" name="password" class="form-control" id="password"  value="<?=isset($_POST['password']) ? isset($_POST['password']) : "" ?>">
+                                        <div class="text-danger">
+                                    <span><?= isset($errorMessage["password"]) ? $errorMessage["password"] : "" ?></span>
+                                    </div>
                                     </div>
                                     <div>
                                     </div>
+                                    
                                     <button type="submit" name="submitButton" class="btn btn-primary mt-3 mb-3">Envoyer</button>
                             </form>
                         </div>
                     </div>
+                    <a class="mt-5" href="Mot de pass">Mot de passe oublier</a>
                     <p>Envie de nous rejoindre ?<a href="creationdecompte.php">Crée un compte</a></p>
                 </div>
             </div>
