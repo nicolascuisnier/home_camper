@@ -2,7 +2,7 @@
 // creation d'une class
 class DataBase {
 
-   protected $dataBase;
+   protected $DataBase;
 
     public function __construct()
     {
@@ -10,7 +10,7 @@ class DataBase {
         try
 {
 	// On se connecte à MySQL
-	$this->dataBase = new PDO('mysql:host=localhost;dbname=home_camping;charset=utf8', 'pdo', 'pdopdo');
+	$this->DataBase = new PDO('mysql:host=localhost;dbname=home_camping;charset=utf8', 'pdo', 'pdopdo');
     
 }
 catch(Exception $errorMessage)
@@ -24,19 +24,4 @@ catch(Exception $errorMessage)
     
 }
 
-echo("bonjour");
-
-// try
-// {
-// 	$bdd = new PDO('mysql:host=localhost;dbname=home_camping;charset=utf8', 'pdo', 'pdopdo');
-   
-    
-// }
-// catch (Exception $e)
-// {
-//         die('Erreur : ' . $e->getMessage());
-// }
-
-
-// ?>
 

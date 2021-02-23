@@ -26,12 +26,15 @@ require_once "../controller/creationcompte.controller.php";
 
 
   <div class="container">
+  
     <div class="row">
+    <?php if ($showForm) { ?>
       <div class="col border border-dark shadow text-center">
 
-
+      
         <form class="creCompte" method="POST" action="creationdecompte.php">
-          <div class="form-group   w-100">
+            <p class="h6 text-success "><?=   $errorMessage['addUser'] ?? '' ?></p>
+            <div class="form-group   w-100">
             <label for="login">Non d'utilisateur</label>
             <input type="text" name="login" class="form-control" id="login" value="<?= isset($_POST["login"]) ? htmlspecialchars($_POST["login"]) : "" ?>">
             <div class="text-danger">
@@ -58,13 +61,18 @@ require_once "../controller/creationcompte.controller.php";
           </div>
 
 
-          <button type="submit" class="btn btn-primary mb-3">Envoyer</button>
+          <button type="submit" name="submit" class="btn btn-primary mb-3">Envoyer</button>
           <div class="mt-5">
             <p>En créant mon compte je reconnais avoir lu et accepté les Conditions Générales de Vente et les Conditions Générales d‘Utilisation, et je confirme être âgé d’au moins 18 ans.</p>
           </div>
         </form>
-      </div>
+        <?php }  else{
+              
+        } ?> 
 
+
+      </div>
+      
       <div class="col ml-5">
         <img src="../assets/img/vanrouge.jpg" alt="">
       </div>
