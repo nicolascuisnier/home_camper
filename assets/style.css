@@ -204,3 +204,10 @@ body{
     color: black;
 }
 
+.header{
+    background-image: url(../assets/img/van.header.jpg);
+    height: 80vh;
+    width: 100%;
+   
+}
+

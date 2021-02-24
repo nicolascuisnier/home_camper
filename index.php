@@ -1,5 +1,6 @@
 <?php
-require_once "controller/index.controller.php";
+require_once "controller/article.controller.php"
+
 
 ?>
 
