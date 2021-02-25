@@ -1,5 +1,6 @@
 <?php
 require_once "../models/database.php";
+require_once "../models/nc_article.php";
 
 $errorMessage = [];
 
@@ -47,4 +48,6 @@ if(empty($errorMessage)){
       $errorMessage['addArticle'] = 'Erreur lors de la modification';
     }
 }
+
+echo 'hello';
 
