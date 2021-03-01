@@ -35,7 +35,7 @@ if(empty($errorMessage)){
   
     // Création d'un tableau 
     $addArticle = [
-      'article_title' => htmlspecialchars($_POST['article_title']),
+      'nc_title' => htmlspecialchars($_POST['article_title']),
       'article_content' => htmlspecialchars($_POST['article_content']),
       'article_img' => htmlspecialchars($_POST['article_img']),
       'article_publication_date' => htmlspecialchars('article_publication_date')
@@ -49,5 +49,5 @@ if(empty($errorMessage)){
     }
 }
 
-echo 'hello';
+
 

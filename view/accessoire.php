@@ -1,4 +1,5 @@
 <?php
+session_start();
   require_once "../controller/navBar.controller.php";
   require_once "../controller/materiel.controller.php";
   ?>
@@ -17,9 +18,11 @@
 </head>
 
   <body>
+    
+  <div class="header"></div> 
 <div class="container mt-">
   <div class="site-title">
-    <h1>Homecamping.com</h1>
+    <h1>Homecamping</h1>
     <p>Annonce Accessoire</p>
   </div>
 </div>

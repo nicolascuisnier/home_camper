@@ -23,9 +23,6 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="../view/deposeAnnonce.php">Déposer une annonce</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="../view/annonce.php">Annonce</a>
-      </li>
     </ul>
   </div>
   </div>

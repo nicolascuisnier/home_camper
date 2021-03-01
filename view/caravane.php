@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../controller/navBar.controller.php";
 require_once "../controller/caravane.controller.php";
 ?>
@@ -23,10 +24,10 @@ require_once "../controller/caravane.controller.php";
 </head>
 
 <body>
-
+<div class="header"></div> 
   <div class="container mt-">
     <div class="site-title">
-      <h1>Homecamping.com</h1>
+      <h1>Homecamping</h1>
       <p>Annonce caravane </p>
     </div>
   </div>
@@ -36,16 +37,16 @@ require_once "../controller/caravane.controller.php";
     <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
       <div class="row no-gutters">
         <?php
-        foreach ($data_home_camping as $key => $value) { ?>
+        foreach ( $allItemsArray as $items) { ?>
           <div class="col-sm-4">
-            <img src="../data/images/<?= $data_home_camping[$key]["name_picture"] ?>" class="card_Img card-img" alt="caravane ">
+            <img src="../data/images/<?= $database[$key]["name_picture"] ?>" class="card_Img card-img" alt="caravane ">
           </div>
           <div class="col-sm-8">
             <div class="text-Card card-body">
-              <h5 class="card-title"><?= $data_home_camping[$key]["title"] ?></h5>
-              <p>prix <?= $data_home_camping[$key]["price"] ?> euros
+              <h5 class="card-title"><?= $items['items_title']?></h5>
+              <p>prix <?= $items['items_price']?> euros
               <p>
-              <p>Nom du vendeur </br> <?= $data_home_camping[$key]["user"] ?></p>
+              <p>Nom du vendeur </br> <?= $items['user'] ?></p>
               <button type="button" class="btn btn-dark text-white" data-toggle="modal" data-target="#staticBackdrop<?=$key?>">Descritpion</button>
             </div>
           </div>

@@ -24,7 +24,7 @@ require_once "../controller/admin.controller.php";
     <h1>Espace administrateur</h1>
   </div>
 
-  <div class="container ">
+  <div class="container-fluid ">
     <div class=" row ">
       <div class="col-sm-4">
         <div class="card shadow" style="width: 20rem;">
@@ -62,10 +62,34 @@ require_once "../controller/admin.controller.php";
             </div>
           </div>
         </div>
+
+     
+
+
+
       </div>
+      <table class="table table w-50 ml-5 mt-5">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">annonce</th>
+      <th scope="col">images</th>
+      <th scope="col">mail</th>
+      <th scope="col">suprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
     </div>
   </div>
-
 
 
   <?php

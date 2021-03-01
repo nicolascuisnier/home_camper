@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../controller/navBar.controller.php";
 require_once "../controller/creationcompte.controller.php";
 ?>

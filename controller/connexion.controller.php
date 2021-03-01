@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 require_once "../models/database.php";
 require_once "../models/nc_user.php";
 
-session_start();
+
 
 $errorMessage = [];
 
@@ -28,21 +29,33 @@ if(isset($_POST["submitButton"])){
 
     if(!empty($_POST['mail']) &&  !empty($_POST['password'])){
         $nc_userObjet = new nc_user;
-       $goodPassword = $nc_userObjet->checkpassword($_POST['mail'], $_POST['password']);
+        $goodPassword = $nc_userObjet->checkpassword($_POST['mail'], $_POST['password']);
         if(!$goodPassword){
             $errorMessage['password'] = 'Mot de passe/adresse mail incorrecte';
-        }
+        }else{
+         $userInfo = $nc_userObjet->detailUser();
+         $_SESSION['nc_user'] = [
+          'id' => $userInfo['user_id'],
+          'name' => $userInfo['user_mail'],
+          'role' => $userInfo['user_role']
+         ]; 
 
+        
+         
+
+         
+         
     }
-
+ 
     if(empty($errorMessage)){
-        header(location('index.php'));
+        header('location:../index.php');
+        echo'Connexion reussie';
 
     }
 
 }
 
-   
+}   
 
 
    

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../controller/navBar.controller.php";
 require_once "../controller/deposeAnnonce.controller.php";
 
@@ -19,65 +20,21 @@ require_once "../controller/deposeAnnonce.controller.php";
   <link rel="icon" type="image/png" sizes="500x500" href="/assets/img/fond.jpg">
 </head>
 
-<body>
-  <div class="container mt-">
-    <div class="site-title">
-      <h1>Homecamping.com</h1>
-      <p>Déposer une annonce</p>
-    </div>
-  </div>
-
-
-  <div class="container mx-auto">
-    <div class="row text-center ">
-      <div class="col-6-sm mx-auto">
-        <h1>Bienvenue!</h1>
-        <p>Pour déposé une annonce connecté vous!</p>
-        <div class=" mb-3 " style="max-width: 1000px;">
-          <div class="row no-gutters ">
-            <div class="col-md-4">
-
-            </div>
+ <div class="header">
+ 
+ </div>
             <div class="col-md-20">
               <div class="card-body">
-
-
-                <form  method="POST" action="deposeAnnonce.php">
-                  <div class="form-group">
-                    <label for="mail">Adresse Mail</label>
-                    <input type="text" class="form-control" id="mail" name="mail" aria-describedby="mail" value="<?= isset($_POST['mail']) ? isset($_POST['mail']) :"" ?>">
-                    <div class="text-danger">
-                      <span><?= isset($errorMessage["mail"]) ? $errorMessage["mail"] :"" ?></span>
-                    </div>
-                  </div>
-
-
-
-                  <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" name="password" id="password" value="<?=isset($_POST['password']) ? isset($_POST['password']) :"" ?>">
-                    <div class="text-danger">
-                      <span><?= isset($errorMessage["password"]) ? $errorMessage["password"] :"" ?></span>
-                    </div>
-                  </div>
-                  <div class="mt-5">
-                    <a href="annonce.php"><button type="submit" class="btn btn-primary">se connecter</button></a>
-                  </div>
-                  <div class="mt-5">
-                    <p>Pas encore de compte?<a href="creationdecompte.php">cliquer ici</a></p>
-                  </div>
-                </form>
+              <?php
+              if(isset($_SESSION['nc_user'])){
+                include "../view/include/formulaire_annonce.php";
+              } else {
+                echo'Pour déposé une annonce vous devez être connecté';
+              } ?>
+              
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 ml-5">
-        <img src="../assets/img/campfeu.jpg" alt="">
-      </div>
-    </div>
-  </div>
-
+            <a type="btn " class="nav-link text-dark text-center" href="../view/connexion.php">Se connecter</a>
 
   <?php
   require_once "../controller/footer.controller.php";

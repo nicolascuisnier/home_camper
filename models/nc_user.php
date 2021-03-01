@@ -26,6 +26,7 @@ class nc_user extends DataBase
             return false;
         }
     }
+
     
 
     public function checkpassword($userMail, $password)
@@ -44,6 +45,21 @@ class nc_user extends DataBase
             } else {
                 return false;
             }
+        } else {
+            return false;
+        }
+    }
+
+
+
+//  detailUser
+    public function detailUser()
+    {
+        $query = "SELECT * FROM nc_user";
+        $detailUserObj = $this->DataBase->prepare($query);
+
+        if($detailUserObj->execute()){
+            return $detailUserObj->fetch();;
         } else {
             return false;
         }

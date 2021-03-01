@@ -1,4 +1,9 @@
+<?php
+session_start();
 
+       
+
+?>
 
 <!doctype html>
 <html lang="fr">
@@ -40,14 +45,14 @@
           <a class="nav-link text-white" href="../view/accessoire.php">Accessoires</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="../view/connexion.php">Se connecter</a>
+          <a class="nav-link text-white" type="submit" href="../view/connexion.php" value="">Se connecter</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="../view/deposeAnnonce.php">Déposer une annonce</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link text-white" href="../view/annonce.php">Annonce</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link text-white" href="../view/admin.php">Admin</a>
         </li>
@@ -59,7 +64,7 @@
   <header>
     <div class="container">
       <div class="site-title">
-        <h1>Homecamping.com</h1>
+        <h1>Homecamping</h1>
       </div>
       <div class="content">
         <h1 class="textH1">Accueil</h1>
@@ -131,10 +136,8 @@
     </div>
   </div>
 
-
-  <li>
     <a class="nav-link text-white text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
-  </li>
+ 
 
 
   <?php

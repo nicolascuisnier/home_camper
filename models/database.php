@@ -10,7 +10,7 @@ class DataBase {
         try
 {
 	// On se connecte à MySQL
-	$this->DataBase = new PDO('mysql:host=localhost;dbname=home_camping;charset=utf8', 'pdo', 'pdopdo');
+	$this->DataBase = new PDO('mysql:host=localhost;dbname=home_camping2;charset=utf8', 'pdo', 'pdopdo');
     
 }
 catch(Exception $errorMessage)

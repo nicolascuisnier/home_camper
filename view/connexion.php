@@ -1,4 +1,5 @@
 <?php
+
 require_once "../controller/navBar.controller.php";
 require_once "../controller/connexion.controller.php";
 require_once "../controller/connexion.controller.php";
@@ -43,7 +44,7 @@ require_once "../controller/connexion.controller.php";
                                 <div class="form">
                                     <div class="form-group">
                                         <label for="mail">Adresse mail</label>
-                                        <input type="email" name="mail" class="form-control" id="mail" aria-describedby="emailHelp" value="<?= isset($_POST['mail']) ? ($_POST['mail']) : "" ?>">
+                                        <input type="email" name="mail" class="form-control" id="mail" aria-describedby="emailHelp" value="<?= isset($_POST['mail']) ? $_POST['mail'] : "" ?>">
                                         <div class="text-danger">
                                     <span><?= isset($errorMessage["mail"]) ? $errorMessage["mail"] : "" ?></span>
                                     </div>

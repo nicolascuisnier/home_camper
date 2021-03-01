@@ -62,7 +62,7 @@ if(empty($errorMessage)){
   if($addUserObjet->addUser($addUser))
   {
     $errorMessage['addUser'] = 'Félicitation votre compte à été crée';
-    
+    header('location:../view/connexion.php');
   } else {
     $errorMessage['addUser'] = 'Erreur de connexion';
   }
