@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-4">
                     
-                        <form class="form" method="POST" action="annonce.php" name="form" enctype="multipart/form-data ">
+                        <form class="form" method="POST" action="deposeAnnonce.php" name="fichier" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="selectCategory"></label>
                                 <select class="form-control" name="selectCategory" id="selectCategory">
@@ -67,10 +67,10 @@
 
                             
                                 <div class="mt-3 ml-1">
-                                    <input type="hidden" name="fichier" value="100000" />
-                                    <input type="file" name="file[0]" id="fileToUpload" />
-                                    <input type="file" name="file[1]" id="fileToUpload" />
-                                    <input type="file" name="file[2]" id="fileToUpload" />
+                                    <!-- <input type="hidden" name="fichier" value="100000" /> -->
+                                    <input type="file" name="fileNumberOne" />
+                                    <input type="file" name="fileNumberTwo"  />
+                                    <input type="file" name="fileNumberThree"  />
                                     <div class="mt-3">
                                     </div>
                                 </div>

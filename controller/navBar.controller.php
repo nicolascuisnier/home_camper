@@ -6,10 +6,10 @@
         <a class="nav-link text-white " href="../index.php">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white " href="../view/caravane.php">Caravane</a>
+        <a class="nav-link text-white " href="../view/caravane.php?id=1">Caravane</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white " href="../view/campingcar.php">Camping-car</a>
+        <a class="nav-link text-white " href="../view/campingcar.php?id=2">Camping-car</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="../view/van.php">Van</a>

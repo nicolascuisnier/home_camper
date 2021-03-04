@@ -1,18 +1,20 @@
 h1{
    font-size: 2rem;
    margin-bottom: 2rem;
+   color: #1e3d59;
   
 }
 
 h2{
     font-size: 1rem;
     font-family:URW Chancery L, cursive;
+    color: #1e3d59;
     
         
 }
 
 body{
-    background-color: rgb(177, 177, 154);
+    background-color: #f5F0e1;
 }
 
 /* li, ul, ol{list-style: none;} */
@@ -31,7 +33,9 @@ body{
    
 }
 
-
+.btn{
+color: #1e3d59;
+}
 
 .imgIndex{
     width: 100%;
@@ -167,6 +171,7 @@ body{
     text-transform: uppercase;
     letter-spacing: 10px;
     
+    
   }
   
   img {
@@ -174,20 +179,26 @@ body{
   }
 
   .bgCard{
-      background-color:rgb(177, 177, 154); 
+    background-color: #f5F0e1;
+}
      
-  }
+  
  
   .textH1{
     font-family:URW Chancery L, cursive;
     letter-spacing: 5px;
     text-align: center;
- 
   }
+
+ 
   
   .textNav{
     font-family:Bradley Hand, cursive;
-    background-color: rgb(139, 139, 124);
+    
+    background-image: url(../assets/img/plage.jpg);
+    width: auto;
+    height: 20rem;
+    
     
   }
 
@@ -199,11 +210,11 @@ body{
   }
 
   .article{
-      background-color:rgb(134, 134, 115); 
+      background-color:rgb(247, 247, 234); 
   }
 
   footer{
-    background-color: rgb(117, 117, 99);
+    background-color: #1e3d59;
     margin-top: 5rem;
   }
 
@@ -214,11 +225,60 @@ body{
     color: black;
 }
 
-.header{
+/* .header{
     background-image: url(../assets/img/van.header.jpg);
     height: 85vh;
     width: 100%;
-    background-position: bottom;
+    background-position: bottom; */
    
 }
+
+.imgDescript{
+    width: 30rem;
+}
+
+.photo-opacity img{
+
+filter: opacity(30%);
+-webkit-filter: opacity(30%);
+}
+
+.photo-opacity img:hover{
+ 
+    filter: opacity(100%);
+    -webkit-filter: opacity(100%);
+}
+h1{
+     
+        animation-duration: 3s;
+        animation-name: slidein;
+        animation-duration: 3s;
+
+} 
+      
+      @keyframes slidein {
+        from {
+          margin-left: 100%;
+          width: 300%;
+        }
+      
+        to {
+          margin-left: 0%;
+          width: 100%;
+        }
+        10% {
+            font-size: 300%;
+            margin-left: 25%;
+            width: 150%;
+          }
+      }
+
+      .text{
+        width: 500px; /* à modifier selon vos besoins */
+        overflow:unset; /* les dépassements seront masqués */
+        word-wrap: break-word;
+        
+      }
+
+
 

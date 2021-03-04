@@ -2,6 +2,7 @@
 <?php
 require_once "../controller/navBar.controller.php";
 require_once "../controller/annonce.controller.php";
+require_once "../controller/deposeAnnonce.controller.php";
 ?>
 
 
@@ -45,7 +46,7 @@ require_once "../controller/annonce.controller.php";
                 </div>
                 <div class="col-4">
                     <?php if ($showForm) { ?>
-                        <form class="form" method="POST" action="annonce.php" name="form" enctype="multipart/form-data ">
+                        <form class="form" method="POST" action="annonce.php" name="form" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="selectCategory"></label>
                                 <select class="form-control" name="selectCategory" id="selectCategory">
@@ -94,16 +95,16 @@ require_once "../controller/annonce.controller.php";
                             
                                 <div class="mt-3 ml-1">
                                     <input type="hidden" name="fichier" value="100000" />
-                                    <input type="file" name="file[0]" id="fileToUpload" />
-                                    <input type="file" name="file[1]" id="fileToUpload" />
-                                    <input type="file" name="file[2]" id="fileToUpload" />
+                                    <input type="file" name="numberOne" />
+                                    <input type="file" name="numberTwo" />
+                                    <input type="file" name="numberThree" />
                                     <div class="mt-3">
                                     </div>
                                 </div>
                            
 
                             <button type="submit" name="submit" class="btn btn-success mt-2 mb-3">Envoyer <i class="fas fa-upload"></i></button>
-                            </div>
+
                         </form>
                     <?php } else { ?>
 

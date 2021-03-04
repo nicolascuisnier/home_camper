@@ -58,6 +58,7 @@ if(empty($errorMessage)){
     'user_password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
     'user_role' => htmlspecialchars('')
   ];
+  var_dump($addUser);
 
   if($addUserObjet->addUser($addUser))
   {
@@ -66,7 +67,7 @@ if(empty($errorMessage)){
   } else {
     $errorMessage['addUser'] = 'Erreur de connexion';
   }
-
+  var_dump($addUser);
 } 
 }
 

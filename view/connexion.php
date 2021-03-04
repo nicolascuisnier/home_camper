@@ -40,6 +40,7 @@ require_once "../controller/connexion.controller.php";
                             <h5 class="card-title">Bonjour!</h5>
                             <p class="card-text">
                             <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
+                            <?php if ($showForm) { ?>
                             <form method="POST" action="connexion.php">
                                 <div class="form">
                                     <div class="form-group">
@@ -49,11 +50,6 @@ require_once "../controller/connexion.controller.php";
                                     <span><?= isset($errorMessage["mail"]) ? $errorMessage["mail"] : "" ?></span>
                                     </div>
                                     </div>
-                                   
-
-
-
-
                                     <div class="form-group">
                                         <label for="password">Mot de passe</label>
                                         <input type="password" name="password" class="form-control" id="password">
@@ -66,6 +62,8 @@ require_once "../controller/connexion.controller.php";
                                     
                                     <button type="submit" name="submitButton" class="btn btn-primary mt-3 mb-3">Envoyer</button>
                             </form>
+                            <?php }  ?> 
+                          
                         </div>
                     </div>
                     <a class="mt-5" href="Mot de pass">Mot de passe oublier</a>

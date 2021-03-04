@@ -23,6 +23,7 @@ require_once "../controller/deposeAnnonce.controller.php";
  <div class="header">
  
  </div>
+ <?php if ($showForm) { ?>
             <div class="col-md-20">
               <div class="card-body">
               <?php
@@ -31,13 +32,15 @@ require_once "../controller/deposeAnnonce.controller.php";
               } else {
                 echo'Pour déposé une annonce vous devez être connecté';
               } ?>
-              
+              <a type="btn " class="nav-link text-dark text-center" href="../view/connexion.php">Se connecter
               </div>
+              
             </div>
-            <a type="btn " class="nav-link text-dark text-center" href="../view/connexion.php">Se connecter</a>
-
+            <?php } ?>  
+          
   <?php
   require_once "../controller/footer.controller.php";
+  
   ?>
 
   <script src="/assets/script.js"></script>

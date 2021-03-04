@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-       
-
 ?>
 
 <!doctype html>
@@ -23,36 +21,34 @@ session_start();
 <body>
 
   <nav>
-    <a class="nav-link text-white " id="Hautdepage"></a>
+    
     <div class="textNav nav-bar ">
+    <a class="nav-link text-white " id="Hautdepage"></a>
       <ul class="nav justify-content-center">
         <li class="nav-item ">
-          <a class="nav-link text-white " href="../index.php">Accueil</a>
+          <a class="nav-link text-light  " href="../index.php">Accueil</a>
         </li>
         <li>
-          <a class="nav-link text-white"  href="#lesdernieresnews">Les dernières news</a>
+          <a class="nav-link text-light "  href="#lesdernieresnews">Les dernières news</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../view/caravane.php">Caravane</a>
+          <a class="nav-link text-light  " href="../view/caravane.php?id=1">Caravane</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../view/campingcar.php">Camping-car</a>
+          <a class="nav-link text-light" href="../view/campingcar.php">Camping-car</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="../view/van.php">Van</a>
+          <a class="nav-link text-light" href="../view/van.php">Van</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="../view/accessoire.php">Accessoires</a>
+          <a class="nav-link text-light" href="../view/accessoire.php">Accessoires</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" type="submit" href="../view/connexion.php" value="">Se connecter</a>
+          <a class="nav-link text-light " type="submit" href="../view/connexion.php" value="">Se connecter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="../view/deposeAnnonce.php">Déposer une annonce</a>
+          <a class="nav-link text-light " href="../view/deposeAnnonce.php">Déposer une annonce</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link text-white" href="../view/annonce.php">Annonce</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link text-white" href="../view/admin.php">Admin</a>
         </li>
@@ -136,7 +132,7 @@ session_start();
     </div>
   </div>
 
-    <a class="nav-link text-white text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
+    <a class="nav-link text-dark text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
  
 
 

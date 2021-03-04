@@ -2,6 +2,7 @@
 session_start();
 require_once "../controller/navBar.controller.php";
 require_once "../controller/campingcar.controller.php";
+require_once "../controller/description.controller.php";
 
 
 ?>
@@ -33,15 +34,15 @@ require_once "../controller/campingcar.controller.php";
       <div class="row no-gutters">
 
       <?php
-      foreach($data_home_camping as $key => $value){?>
+      foreach($allCampingCar as $campingcar){?>
         <div class="col-sm-4">
-          <img src="../data/images/<?=$data_home_camping[$key]["name_picture"]?>" class="card_Img card-img" alt="caravane ">
+        <img src="../assets/gallery/<?=$campingcar["items_pictureOne"]?>" class="card_Img card-img" alt="caravane ">
         </div>
         <div class="col-sm-8">
           <div class="text-Card card-body">
-            <h5 class="card-title"><?=$data_home_camping[$key]["title"]?></h5>
-            <p><?=$data_home_camping[$key]["price"]?><p>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">Descritpion</button>
+          <h5 class="card-title"><?= $campingcar['items_title']?></h5>
+          <p>prix <?= $campingcar['items_price']?> euros</p>
+          <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$campingcar['items_id']?>" value="<?=$campingcar[$idCategory]?>">+ d'info</a>
           </div>
           </div>
      <?php }?>
