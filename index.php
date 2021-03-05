@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 ?>
 
 <!doctype html>
@@ -35,13 +36,13 @@ session_start();
           <a class="nav-link text-light  " href="../view/caravane.php?id=1">Caravane</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../view/campingcar.php">Camping-car</a>
+          <a class="nav-link text-light" href="../view/campingcar.php?id=2">Camping-car</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../view/van.php">Van</a>
+          <a class="nav-link text-light" href="../view/van.php?id=3">Van</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../view/accessoire.php">Accessoires</a>
+          <a class="nav-link text-light" href="../view/accessoire.php?id=4">Accessoires</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light " type="submit" href="../view/connexion.php" value="">Se connecter</a>
@@ -52,6 +53,9 @@ session_start();
         <li class="nav-item">
           <a class="nav-link text-white" href="../view/admin.php">Admin</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link text-white" href="../view/profil_user.php<?=$_GET['idUser']?>">Profil</a>
+        </li> -->
       </ul>
     </div>
     </div>

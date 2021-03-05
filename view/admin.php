@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once "../controller/admin.controller.php";
+
 
 
 ?>
@@ -24,68 +26,65 @@ require_once "../controller/admin.controller.php";
     <h1>Espace administrateur</h1>
   </div>
 
-  <div class="container-fluid ">
-    <div class=" row ">
-      <div class="col-sm-4">
-        <div class="card shadow" style="width: 20rem;">
-          <img src="../assets/img/plage.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <select class="form-control form-control-sm">
-              <option selected disabled >Choisir un article</option>
-              <option value="1" >Choisir un article</option>
-              <option value="2" >Choisir un article</option>
-              <option value="3" >Choisir un article</option>
-            </select>
-            <hr>
-            <div>
-              <label for="article_title">Titre de l'article</label>
-              <input type="text" name="article_title" id="article_title" placeholder="ex: Caravane">
-            </div>
-
-            <div>
-              <label for="article_content" class="mt-3">description de l'article</label>
-              <textarea name="article_content" id="article_content" cols="30" rows="10" placeholder="ex: Description"></textarea>
-            </div>
-
-            <div>
-              <label for="article_img">Image</label>
-              <input type="file" name="article_img" id="article_img">
-            </div>
-
-            <div>
-              <label for="article_publication_date">Date de publication</label>
-              <input type="date" name="article_publication_date" id="article_publication_date">
-            </div>
-
-            <div>
-              <a href="#" type="submit" class="btn btn-primary mt-3">Valider</a>
-            </div>
-          </div>
-        </div>
-
-     
-
-
-
-      </div>
-      <table class="table table w-50 ml-5 mt-5">
+  <table class="table table-sm table table-hover text-center">
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">annonce</th>
-      <th scope="col">images</th>
       <th scope="col">mail</th>
-      <th scope="col">suprimer</th>
+      <th scope="col">id de l'anonce</th>
+      <th scope="col">Titre de l'annonce</th>
+      <th scope="col">image 1</th>
+      <th scope="col">image 2</th>
+      <th scope="col">image 3</th>
+      <th scope="col">Categorie</th>
+      <th scope="col">Validation</th>
+      <th scope="col">Accepter</th>
+      <th scope="col">Supprimer</th>
     </tr>
   </thead>
   <tbody>
+  <?php foreach($viewAnnonceArray as $annonce){ ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      <td><?=$annonce['user_id']?></th>
+      <td><?=$annonce['user_mail']?></td>
+      <td><?=$annonce['items_id']?></td>
+      <td><?=$annonce['items_title']?></td>
+      <td><img src="../assets/gallery/<?=$annonce['items_pictureOne']?>" style="width: 100px;" alt=""></td>
+      <td><img src="../assets/gallery/<?=$annonce['items_pictureTwo']?>" style="width: 100px;" alt=""></td>
+      <td><img src="../assets/gallery/<?=$annonce['items_pictureThree']?>" style="width: 100px;" alt=""></td>
+      <td><?=$annonce['category_name']?></td>
+      <form action="">
+      <td><select class="form-control" id="exampleFormControlSelect1">
+      <option><?=$annonce['items_validate']?></option>
+      <option><?=$annonce['items_validate']?></option>
+      </select></td>
+      </form>
+      <td><button type="button" class="btn  btn-success mr-3 btn-sm " data-target="#exampleModal"><i class="fas fa-check "></i></button></td>
+      <td><button type="button" data-toggle="modal"  data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
+      
     </tr>
+    
+ <?php } ?>
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p class="text-danger font-weight-bold text-center">Etes vous sur de vouloire supprimer l'annonce?</p>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Oui</button>
+        <button type="submit" class="btn btn-danger">Non</button>
+      </div>
+    </div>
+  </div>
+</div>
+   
   </tbody>
 </table>
     </div>

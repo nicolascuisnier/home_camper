@@ -2,6 +2,7 @@
 session_start();
   require_once "../controller/navBar.controller.php";
   require_once "../controller/van.controller.php";
+  require_once "../controller/description.controller.php";
 ?>
 
 
@@ -29,16 +30,19 @@ session_start();
 <div class="container">
     <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
       <div class="row no-gutters">
-        <div class="col-sm">
-          <img src="/assets/img/vanbleu.jpg" class="card-img" alt="caravane ">
+      <?php
+      foreach($allVan as $van){?>
+        <div class="col-sm-4">
+        <img src="../assets/gallery/<?=$van["items_pictureOne"]?>" class="card_Img card-img" alt="caravane ">
         </div>
         <div class="col-sm-8">
-          <div class=" test card-body">
-            <h5 class="card-title">Caravane</h5>
-            <p>prix 8000 euros</p>
-            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#staticBackdrop">Descritpion</button>
+          <div class="text-Card card-body">
+          <h5 class="card-title"><?= $van['items_title']?></h5>
+          <p>prix <?= $van['items_price']?> euros</p>
+          <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$van['items_id']?>" value="<?=$van[$idCategory]?>">+ d'info</a>
           </div>
-        </div>
+          </div>
+     <?php } ?>
       </div>
     </div>
   </div>

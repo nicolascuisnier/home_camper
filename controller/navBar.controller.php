@@ -12,10 +12,10 @@
         <a class="nav-link text-white " href="../view/campingcar.php?id=2">Camping-car</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="../view/van.php">Van</a>
+        <a class="nav-link text-white" href="../view/van.php?id=3">Van</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="../view/accessoire.php">Accessoires</a>
+        <a class="nav-link text-white" href="../view/accessoire.php?id=4">Accessoires</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="../view/connexion.php">Se connecter</a>

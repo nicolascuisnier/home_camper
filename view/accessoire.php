@@ -30,36 +30,23 @@ session_start();
 <div class="container">
   <div class="mb-3 mt-3" style="max-width: 600px h-5 ">
     <div class="row no-gutters">
-      <div class="col-sm">
-        <img src="/assets/img/duvet.jpg" class="card-img" alt="caravane ">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Duvet</h5>
-          <p>Duvet 1 personne </p>
-          <p>prix 8 euros</p>
-          <p>Contacter le vendeur</p>
+    <?php
+      foreach($allMateriel as $materiel){?>
+        <div class="col-sm-4">
+        <img src="../assets/gallery/<?=$materiel["items_pictureOne"]?>" class="card_Img card-img" alt="caravane ">
         </div>
+        <div class="col-sm-8">
+          <div class="text-Card card-body">
+          <h5 class="card-title"><?= $materiel['items_title']?></h5>
+          <p>prix <?= $materiel['items_price']?> euros</p>
+          <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$materiel['items_id']?>" value="<?=$materiel[$idCategory]?>">+ d'info</a>
+          </div>
+          </div>
+     <?php } ?>
       </div>
     </div>
   </div>
 
-  <div class="mb-3 mt-3" style="max-width: 600px h-5 ">
-    <div class="row no-gutters">
-      <div class="col-sm">
-        <img src="/assets/img/opinel.jpg" class="card-img" alt="caravane">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Coteau</h5>
-          <p>Opinel </p>
-          <p>prix 10 euros</p>
-          <p>Contacter le vendeur</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <?php

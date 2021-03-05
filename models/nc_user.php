@@ -60,16 +60,63 @@ class nc_user extends DataBase
 
 
 
-//  detailUser
-    public function detailUser($userMail, $password)
-    {
-        $query = "SELECT * FROM nc_user";
-        $detailUserObj = $this->DataBase->prepare($query);
+// //  detailUser
+//     public function detailUser($userMail, $password)
+//     {
+//         $query = "SELECT * FROM nc_user";
+//         $detailUserObj = $this->DataBase->prepare($query);
 
-        if($detailUserObj->execute()){
-            return $detailUserObj->fetch();;
+//         if($detailUserObj->execute()){
+//             return $detailUserObj->fetch();;
+//         } else {
+//             return false;
+//         }
+//     }
+
+
+/**
+ * Méthode permettant d'obtenir la liste de toutes les annonces par utilisateur
+ * 
+ * 
+ * @return array
+ */
+
+    //affichache des annonces coté admin
+    public function viewAnnonce()
+    {
+
+    $query = "SELECT `nc_user`.`user_id`, `user_mail`, `items_id`, `items_title`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_name`, `items_validate`  
+    FROM `nc_user` INNER JOIN `nc_items` ON `nc_user`.`user_id` = `nc_items`.`user_id` INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id` ";
+
+    $viewAnnonceQuery = $this->DataBase->prepare($query);
+   
+    $viewAnnonceQuery->execute();
+     return $viewAnnonceQuery->fetchAll();
+
+}
+
+
+
+    public function getDetailsUser(string $idUser)
+    {
+        $query = "SELECT `nc_user`.`user_id`, `user_mail`, `items_title`,`items_id`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_name`, `items_validate`  
+        FROM `nc_user` 
+        INNER JOIN `nc_items` ON `nc_user`.`user_id` = `nc_items`.`user_id` 
+        INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id`
+        WHERE `nc_user`.`user_id` = :nc_user.user_id";
+
+        $getDetailsUserQuery= $this->DataBase->prepare($query);
+
+        $getDetailsUserQuery->bindValue(':nc_user.user_id', $idUser, PDO::PARAM_STR);
+
+        if($getDetailsUserQuery->execute())
+        {
+            return $getDetailsUserQuery->fetch();
         } else {
             return false;
         }
+
+
     }
+
 }

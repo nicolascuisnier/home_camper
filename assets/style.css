@@ -280,5 +280,13 @@ h1{
         
       }
 
+      .clignote {
+        color:red;
+         animation: Test 1s infinite;
+      }
+      @keyframes clignote {  
+        50% { opacity: 0; }
+      }
+
 
 

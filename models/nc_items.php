@@ -34,13 +34,17 @@ class nc_items extends DataBase
             return false;
         }
     }
+
+
+
+
     
 
-    // affichage pour les caravanes
+    // affichage des items
     public function displayItems(int $displayItems)
     {
-        $query = "SELECT `items_title`, `user_mail`, `items_id`, `items_description`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_id` 
-        FROM `home_camping2`.`nc_items` 
+        $query = "SELECT `items_title`, `user_mail`, `items_id`, `items_description`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_id`,`items_validate` 
+        FROM `home_camping2`. `nc_items` 
         INNER JOIN `nc_user` ON `nc_items`.`user_id` = `nc_user`.`user_id` 
         WHERE `category_id` = :id AND `items_validate` = 1";
 
@@ -58,7 +62,7 @@ class nc_items extends DataBase
     }
     
 
-  // Description de l'annonce
+  // Description des items
   public function descriptItems(int $descriptItems)
   {
       $query = "SELECT `items_title`, `items_id`, `items_description`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_id` 
@@ -78,6 +82,29 @@ class nc_items extends DataBase
   }
 
 }
+
+
+
+/**
+ * 
+ * Méthode permetent de supprimer un items
+ * 
+ * return false
+ */
+ public function deleteAnnonce()
+ {
+    $query ="DELETE FROM `nc_items` WHERE `nc_items`.`items_id` = :items_id";
+    $deleteAnnonceQuery= $this->DataBase->prepare($query);
+    $deleteAnnonceQuery->bindValue(':items_id', PDO::PARAM_STR);
+   
+    if($deleteAnnonceQuery->execute()){
+        return true;
+    }else{
+        return false;
+    }
+
+ }
+
 
 }
 

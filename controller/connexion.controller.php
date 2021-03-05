@@ -40,7 +40,7 @@ if(isset($_POST["submitButton"])){
     }
  
     if(empty($errorMessage)){
-        // header('location:deposeAnnonce.php');
+        header('location:deposeAnnonce.php');
         echo'Connexion reussie';
     }
     if (count($errorMessage) == 0) { // si il ny a aucune érreur le formulaire disparait

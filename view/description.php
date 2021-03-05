@@ -40,47 +40,22 @@ require_once "../controller/caravane.controller.php";
         ]; { ?>
         <h1 class="text-center">Descripiton de l'annonce <?= $caravane['items_title'] ?></h1>
         <div class="container">
-
             <h1 class="font-weight-light text-center font-weight-bold  text-lg-left mt-4 mb-0">Photos de l'annonce</h1>
-
-
-
             <div class="row text-center text-lg-left">
-
-
-                <?php
+               <?php
                 foreach ($imageGallery as $image) {
-                    if($image == NULL){
+                    if ($image == NULL) {
                         continue;
                     }
-                    ?>
-
+                ?>
                     <div class="photo-opacity ">
                         <img src="../assets/gallery/<?= $image ?>" class="card_Img card-img" style="display:inline-block; width: 900px" alt="caravane ">
                         </a>
                     </div>
                 <?php   } ?>
-
-                <!-- <div class="photo-opacity  ">
-
-                    <img src="../assets/gallery/<?= $caravane["items_pictureTwo"] ?>" class="card_Img card-img" style="display:inline-block; width: 900px" alt="caravane ">
-                    </a>
-                </div>
-                <div class="photo-opacity ">
-
-                    <img src="../assets/gallery/<?= $caravane["items_pictureThree"] ?>" class="card_Img card-img" style="display:inline-block; width: 900px" alt="caravane ">
-                    </a>
-                </div>
-                <div class="col-6 mt-5">
-                    <h1 class="font-weight-light text-center font-weight-bold   mt-4 mb-5 ">Description</h1>
-                    <p class="text  text-center"><?= $caravane['items_description'] ?></p>
-                </div> -->
-
             </div>
-
         </div>
         <hr>
-
         <h1 class="font-weight-light text-center font-weight-bold  mt-4 mb-2 ">Prix</h1>
         <p class="text-center"><?= $caravane['items_price'] ?> Euros</p>
         <hr>
@@ -88,10 +63,7 @@ require_once "../controller/caravane.controller.php";
 
 
 
-    <?php } ?>
-
-
-
+    <!-- <?php } ?> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
