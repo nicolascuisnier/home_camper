@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-
 ?>
 
 <!doctype html>
@@ -20,9 +18,8 @@ session_start();
 </head>
 
 <body>
-
+  <!-- navbarre -->
   <nav>
-    
     <div class="textNav nav-bar ">
     <a class="nav-link text-white " id="Hautdepage"></a>
       <ul class="nav justify-content-center">
@@ -61,6 +58,7 @@ session_start();
     </div>
   </nav>
 
+
   <header>
     <div class="container">
       <div class="site-title">
@@ -97,6 +95,8 @@ session_start();
     <h2 class="news" ><i class="font-italic  fas fa-campground"></i> Les dernieres news</h2>
     <a class="nav-link text-white" style="right: 0px;" id="lesdernieresnews"></a>
   </div>
+
+
   <!-- article 1-->
   <div class="container-fluid">
     <div class="row">
@@ -106,12 +106,12 @@ session_start();
           C’est en 1962 que Sud Aviation, constructeur de caravelles basé à Trignac, en Loire-Atlantique, décide de se diversifier dans la construction de caravanes.
           Un bureau d’études avec des dessinateurs riches de leur expérience aéronautique lance les premières caravanes Caravelair, associant déjà créativité et originalité…
           50 ans après un parcours ininterrompu d’innovations, Caravelair a su s’imposer comme le leader français de la Caravane et perpétue son savoir-faire en mettant à votre disposition des caravanes de qualité, pensées et construites pour vous.</p>
-
         <img class="imgArticle1" src="/assets/img/caravane 2021.jpg" alt="tente">
         <div class="mt-3">
           <img class="imgArticle1" src="/assets/img/caravane20211.jpg" alt="tente">
         </div>
       </div>
+
 
       <!-- article 2 -->
       <div class="article col-sm mt-5 text-center border border-dark img-responsive shadow ml-2">
@@ -127,6 +127,7 @@ session_start();
       </div>
 
 
+
       <!-- article 3 -->
       <div class="article col-sm mt-5 text-center border border-dark img-responsive shadow ml-2 mr-2">
         <h1>Les Vans</h1>
@@ -136,7 +137,7 @@ session_start();
     </div>
   </div>
 
-    <a class="nav-link text-dark text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
+  <a class="nav-link text-dark text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
  
 
 

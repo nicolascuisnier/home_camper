@@ -67,7 +67,6 @@
 
                             
                                 <div class="mt-3 ml-1">
-                                    <!-- <input type="hidden" name="fichier" value="100000" /> -->
                                     <input type="file" name="fileNumberOne" />
                                     <input type="file" name="fileNumberTwo"  />
                                     <input type="file" name="fileNumberThree"  />

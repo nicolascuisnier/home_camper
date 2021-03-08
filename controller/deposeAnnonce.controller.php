@@ -3,12 +3,11 @@ require_once "../models/database.php";
 require_once "../models/nc_category.php";
 require_once "../models/nc_items.php";
 
-// var_dump($_FILES["fileNumberOne"],$_FILES["fileNumberTwo"],$_FILES["fileNumberTree"]);
+
 
 $category = new nc_category;
 
 $categoryArray = $category->selectCategory();
-
 
 $selectCategory = [];
 foreach ($categoryArray as $value) {
@@ -122,7 +121,7 @@ if (isset($_POST["submit"])) {
 
     // Création de l'objet user
     $addItemsObjet = new nc_items;
-    var_dump(count($newImageNameFileList));
+ 
 
     // Création d'un tableau 
     $additems = [

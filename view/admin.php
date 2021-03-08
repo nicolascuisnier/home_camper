@@ -1,9 +1,6 @@
 <?php
 session_start();
 require_once "../controller/admin.controller.php";
-
-
-
 ?>
 
 
@@ -26,45 +23,95 @@ require_once "../controller/admin.controller.php";
     <h1>Espace administrateur</h1>
   </div>
 
+  <h1>Annonce à valider</h1>
   <table class="table table-sm table table-hover text-center">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">mail</th>
-      <th scope="col">id de l'anonce</th>
+      <th scope="col">mail du vendeur</th>
+      <th scope="col">id de l'annonce</th>
       <th scope="col">Titre de l'annonce</th>
-      <th scope="col">image 1</th>
-      <th scope="col">image 2</th>
-      <th scope="col">image 3</th>
       <th scope="col">Categorie</th>
-      <th scope="col">Validation</th>
-      <th scope="col">Accepter</th>
+      <th scope="col">Plus de détails</th>
       <th scope="col">Supprimer</th>
     </tr>
   </thead>
   <tbody>
-  <?php foreach($viewAnnonceArray as $annonce){ ?>
+
+
+
+
+  <?php foreach($viewAnnoncetoValidateArray as $annonce){ ?>
     <tr>
-      <td><?=$annonce['user_id']?></th>
       <td><?=$annonce['user_mail']?></td>
       <td><?=$annonce['items_id']?></td>
       <td><?=$annonce['items_title']?></td>
-      <td><img src="../assets/gallery/<?=$annonce['items_pictureOne']?>" style="width: 100px;" alt=""></td>
-      <td><img src="../assets/gallery/<?=$annonce['items_pictureTwo']?>" style="width: 100px;" alt=""></td>
-      <td><img src="../assets/gallery/<?=$annonce['items_pictureThree']?>" style="width: 100px;" alt=""></td>
       <td><?=$annonce['category_name']?></td>
-      <form action="">
-      <td><select class="form-control" id="exampleFormControlSelect1">
-      <option><?=$annonce['items_validate']?></option>
-      <option><?=$annonce['items_validate']?></option>
-      </select></td>
-      </form>
-      <td><button type="button" class="btn  btn-success mr-3 btn-sm " data-target="#exampleModal"><i class="fas fa-check "></i></button></td>
+      <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$annonce['items_id']?>">+ d'info</a></td>
       <td><button type="button" data-toggle="modal"  data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
       
     </tr>
     
  <?php } ?>
+
+  </table>
+<h1>Annonce validées</h1>
+  <table class="table table-sm table table-hover text-center">
+  <thead>
+    <tr>
+      <th scope="col">mail du vendeur</th>
+      <th scope="col">id de l'annonce</th>
+      <th scope="col">Titre de l'annonce</th>
+      <th scope="col">Categorie</th>
+      <th scope="col">Plus de détails</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+
+
+  <?php foreach($viewAnnonceValidatedArray as $annonce){ ?>
+    <tr>
+      <td><?=$annonce['user_mail']?></td>
+      <td><?=$annonce['items_id']?></td>
+      <td><?=$annonce['items_title']?></td>
+      <td><?=$annonce['category_name']?></td>
+      <td> <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$annonce['items_id']?>">+ d'info</a></td></td>
+      <td><button type="button" data-toggle="modal"  data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
+      
+    </tr>
+    
+ <?php } ?>
+
+  </table>
+
+
+ <!-- <form class="items-center" method="post">
+ <div class="form-group">
+    <label for="id_items">Annonces</label>
+    <select class="form-control w-50" id="id_items">
+    <option value="0" > Choisir une annonce</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+
+  <div class="form-group">
+    <label for="login" >Login</label>
+    <input type="text" class="form-control w-50 " id="login">
+  </div>
+  <div class="form-group">
+    <label for="title">Titre de l'annonce</label>
+    <input type="text" class="form-control w-50" id="title">
+  </div>
+  <a type="button" href="../view/valide_itmes.php" class="btn btn-sm btn-outline-dark">Plus d'info</a>
+</form> -->
+
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

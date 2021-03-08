@@ -17,8 +17,7 @@ class nc_user extends DataBase
         $addUserQuery->bindValue(':user_name', $addUser['user_name'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_mail', $addUser['user_mail'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_password', $addUser['user_password'], PDO::PARAM_STR);
-        // $addUserQuery->bindValue(':user_role', '', PDO::PARAM_STR);
-
+        
         //Vérification de la requete et execution
         if ($addUserQuery->execute()) {
             return true;
@@ -27,27 +26,26 @@ class nc_user extends DataBase
         }
     }
 
-    
+
+
+
+
 
     public function checkpassword($userMail, $password)
     {
-        //var_dump($userMail, $password);
-
         $query = 'SELECT * FROM home_camping2.nc_user WHERE user_mail = :user_mail';
         $userMailQuery = $this->DataBase->prepare($query);
         $userMailQuery->bindValue(':user_mail', $userMail);
 
         if ($userMailQuery->execute()) {
-            //$userMailQuery->debugDumpParams();
-           
             $userInfos = $userMailQuery->fetch();
             $userPassword = $userInfos['user_password'];
             if (password_verify($password, $userPassword)) {
-               
+
                 $_SESSION['nc_user'] = [
-                'id' => $userInfos['user_id'],
-                'name' => $userInfos['user_mail'],
-                ]; 
+                    'id' => $userInfos['user_id'],
+                    'name' => $userInfos['user_mail'],
+                ];
 
                 return true;
             } else {
@@ -60,42 +58,31 @@ class nc_user extends DataBase
 
 
 
-// //  detailUser
-//     public function detailUser($userMail, $password)
-//     {
-//         $query = "SELECT * FROM nc_user";
-//         $detailUserObj = $this->DataBase->prepare($query);
 
-//         if($detailUserObj->execute()){
-//             return $detailUserObj->fetch();;
-//         } else {
-//             return false;
-//         }
-//     }
-
-
-/**
- * Méthode permettant d'obtenir la liste de toutes les annonces par utilisateur
- * 
- * 
- * @return array
- */
+    /**
+     * Méthode permettant d'obtenir la liste de toutes les annonces par utilisateur
+     * 
+     * 
+     * @return array
+     */
 
     //affichache des annonces coté admin
-    public function viewAnnonce()
+    public function viewAnnonce(int $validateValue)
     {
 
-    $query = "SELECT `nc_user`.`user_id`, `user_mail`, `items_id`, `items_title`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_name`, `items_validate`  
-    FROM `nc_user` INNER JOIN `nc_items` ON `nc_user`.`user_id` = `nc_items`.`user_id` INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id` ";
+        $query = "SELECT `nc_user`.`user_id`, `user_mail`, `items_id`, `items_title`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_name`, `items_validate`  
+    FROM `nc_user` INNER JOIN `nc_items` ON `nc_user`.`user_id` = `nc_items`.`user_id` INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id` WHERE items_validate = " . $validateValue;
 
-    $viewAnnonceQuery = $this->DataBase->prepare($query);
-   
-    $viewAnnonceQuery->execute();
-     return $viewAnnonceQuery->fetchAll();
+        $viewAnnonceQuery = $this->DataBase->prepare($query);
 
-}
+        $viewAnnonceQuery->execute();
+        return $viewAnnonceQuery->fetchAll();
+    }
 
 
+
+
+    
 
     public function getDetailsUser(string $idUser)
     {
@@ -105,18 +92,14 @@ class nc_user extends DataBase
         INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id`
         WHERE `nc_user`.`user_id` = :nc_user.user_id";
 
-        $getDetailsUserQuery= $this->DataBase->prepare($query);
+        $getDetailsUserQuery = $this->DataBase->prepare($query);
 
         $getDetailsUserQuery->bindValue(':nc_user.user_id', $idUser, PDO::PARAM_STR);
 
-        if($getDetailsUserQuery->execute())
-        {
+        if ($getDetailsUserQuery->execute()) {
             return $getDetailsUserQuery->fetch();
         } else {
             return false;
         }
-
-
     }
-
 }

@@ -24,13 +24,11 @@ class nc_items extends DataBase
         $additemsQuery->bindValue(':user_id', $_SESSION['nc_user']['id'], PDO::PARAM_STR);
         $additemsQuery->bindValue(':category_id', $additems['selectCategory'], PDO::PARAM_STR);
         $additemsQuery->bindValue(':items_validate', 0, PDO::PARAM_BOOL);
-        
 
-        
         //Vérification et execution de la requete
-        if($additemsQuery->execute()){
+        if ($additemsQuery->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -38,7 +36,7 @@ class nc_items extends DataBase
 
 
 
-    
+
 
     // affichage des items
     public function displayItems(int $displayItems)
@@ -48,64 +46,78 @@ class nc_items extends DataBase
         INNER JOIN `nc_user` ON `nc_items`.`user_id` = `nc_user`.`user_id` 
         WHERE `category_id` = :id AND `items_validate` = 1";
 
-    $displayItemsQuery= $this->DataBase->prepare($query);
-    $displayItemsQuery->bindValue(':id', $displayItems, PDO::PARAM_INT);
+        $displayItemsQuery = $this->DataBase->prepare($query);
+        $displayItemsQuery->bindValue(':id', $displayItems, PDO::PARAM_INT);
 
-    if($displayItemsQuery->execute()){
-     
-        $result = $displayItemsQuery->fetchAll();
-        return $result;
-    }else{
-        return false;
-    }
-    
-    }
-    
+        if ($displayItemsQuery->execute()) {
 
-  // Description des items
-  public function descriptItems(int $descriptItems)
-  {
-      $query = "SELECT `items_title`, `items_id`, `items_description`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_id` 
+            $result = $displayItemsQuery->fetchAll();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+
+
+
+
+    // Description des items
+    public function descriptItems(int $descriptItems)
+    {
+        $query = "SELECT `items_title`, `items_id`, `items_description`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_id` 
       FROM `home_camping2`.`nc_items` 
       INNER JOIN `nc_user` ON `nc_items`.`user_id` = `nc_user`.`user_id` 
       WHERE `items_id` = :id";
 
-  $descriptItemsQuery = $this->DataBase->prepare($query);
-  $descriptItemsQuery->bindValue(':id', $descriptItems, PDO::PARAM_INT);
+        $descriptItemsQuery = $this->DataBase->prepare($query);
+        $descriptItemsQuery->bindValue(':id', $descriptItems, PDO::PARAM_INT);
 
-  if($descriptItemsQuery->execute()){
-   
-      $result = $descriptItemsQuery->fetchAll();
-      return $result;
-  }else{
-      return false;
-  }
+        if ($descriptItemsQuery->execute()) {
 
-}
-
-
-
-/**
- * 
- * Méthode permetent de supprimer un items
- * 
- * return false
- */
- public function deleteAnnonce()
- {
-    $query ="DELETE FROM `nc_items` WHERE `nc_items`.`items_id` = :items_id";
-    $deleteAnnonceQuery= $this->DataBase->prepare($query);
-    $deleteAnnonceQuery->bindValue(':items_id', PDO::PARAM_STR);
-   
-    if($deleteAnnonceQuery->execute()){
-        return true;
-    }else{
-        return false;
+            $result = $descriptItemsQuery->fetchAll();
+            return $result;
+        } else {
+            return false;
+        }
     }
 
- }
 
 
+
+
+    public function valideItems()
+    {
+        $query = "UPDATE `nc_items` SET `items_validate` = 1 WHERE `items_id` = :id_items";
+        $validItemsquery = $this->DataBase->prepare($query);
+        $validItemsquery->bindValue(':items_id', PDO::PARAM_STR);
+
+
+        if ($validItemsquery->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+    /**
+     * 
+     * Méthode permetent de supprimer un items
+     * 
+     * return false
+     */
+    public function deleteAnnonce()
+    {
+        $query = "DELETE FROM `nc_items` WHERE `nc_items`.`items_id` = :items_id";
+        $deleteAnnonceQuery = $this->DataBase->prepare($query);
+        $deleteAnnonceQuery->bindValue(':items_id', PDO::PARAM_STR);
+
+        if ($deleteAnnonceQuery->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
-
-

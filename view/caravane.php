@@ -30,7 +30,7 @@ require_once "../controller/description.controller.php";
 </head>
 
 <body>
-<div class="header"></div> 
+  <div class="header"></div>
   <div class="container mt-">
     <div class="site-title">
       <h1>Homecamping</h1>
@@ -43,20 +43,17 @@ require_once "../controller/description.controller.php";
     <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
       <div class="row no-gutters">
         <?php
-        foreach ($allCaravane as $caravane) { 
-          
-          ?>
+        foreach ($allCaravane as $caravane) {
+        ?>
           <div class="col-sm-4">
-          <img src="../assets/gallery/<?=$caravane["items_pictureOne"]?>" class="card_Img card-img" alt="caravane ">
-            
+            <img src="../assets/gallery/<?= $caravane["items_pictureOne"] ?>" class="card_Img card-img" alt="caravane ">
           </div>
           <div class="col-sm-8">
             <div class="text-Card card-body">
-              <h5 class="card-title"><?= $caravane['items_title']?></h5>
-              <p>prix <?= $caravane['items_price']?> euros
+              <h5 class="card-title"><?= $caravane['items_title'] ?></h5>
+              <p>prix <?= $caravane['items_price'] ?> euros
               <p>
-              <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$caravane['items_id']?>" value="<?=$caravane[$idCategory]?>">+ d'info</a>
-              <!-- <button type="button" class="btn btn-dark text-white" data-toggle="modal" data-target="#test<?=$caravane[$idCategory]?>">Descritpion</button> -->
+                <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $caravane['items_id'] ?>" value="<?= $caravane[$idCategory] ?>">+ d'info</a>
             </div>
           </div>
         <?php } ?>
@@ -66,28 +63,21 @@ require_once "../controller/description.controller.php";
 
 
 
-  <!-- Modal 1 -->
+ 
   <?php
   foreach ($allCaravane as $caravane) { ?>
-    <div class="modal fade" id="test<?=$caravane[$idCategory]?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  
+    <div class="modal fade" id="test<?= $caravane[$idCategory] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
- 
         <div class="modal-content">
-  
           <div class="modal-header">
-   
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             </button>
           </div>
           <div class="modal-body">
-            <!-- <img src="../data/images/<?= $data_home_camping[$key]["name_picture"] ?> " alt="caravane"> -->
           </div>
           <ul>
             <li>Description </li><?= $caravane["items_description"] ?>
             <li>Prix</li><?= $caravane["items_price"] ?>
-           
-            
           </ul>
           <div class="modal-footer">
             <button class="btn btn-dark" type="button"><a class="text-white" href="mailto:nullepart@mozilla.org">Contacter le vendeur</a></button>
@@ -96,18 +86,18 @@ require_once "../controller/description.controller.php";
         </div>
       </div>
     </div>
-    <?php } ?>
+  <?php } ?>
 
 
 
 
-    <?php
-    require_once "../controller/footer.controller.php";
-    ?>
+  <?php
+  require_once "../controller/footer.controller.php";
+  ?>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

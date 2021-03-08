@@ -4,7 +4,7 @@ require_once "../controller/navBar.controller.php";
 require_once "../controller/description.controller.php";
 require_once "../controller/caravane.controller.php";
 
-
+var_dump($_SESSION);
 
 ?>
 
@@ -59,11 +59,16 @@ require_once "../controller/caravane.controller.php";
         <h1 class="font-weight-light text-center font-weight-bold  mt-4 mb-2 ">Prix</h1>
         <p class="text-center"><?= $caravane['items_price'] ?> Euros</p>
         <hr>
+        <h1 class="text-center">Description</h1>
+        <p class="text-center"><?= $caravane['items_description'] ?> description</p>
         <h1 class="font-weight-light text-center font-weight-bold   mt-4 mb-5 ">Contacter le vendeur</h1>
 
 
 
     <!-- <?php } ?> -->
+    <form>
+  <input class="boutton " type="button" value="Retour aux annonces" onclick="history.go(-1)">
+</form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

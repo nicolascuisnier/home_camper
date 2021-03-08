@@ -20,56 +20,56 @@ session_start();
 
 <body>
 <div class="header"></div> 
-<div class="container mt-">
-  <div class="site-title">
-    <h1>Homecamping.com</h1>
-    <p>Annonce Van</p>
+  <div class="container mt-">
+    <div class="site-title">
+       <h1>Homecamping.com</h1>
+         <p>Annonce Van</p>
+    </div>
   </div>
-</div>
 
 <div class="container">
-    <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
-      <div class="row no-gutters">
+  <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
+    <div class="row no-gutters">
       <?php
-      foreach($allVan as $van){?>
-        <div class="col-sm-4">
-        <img src="../assets/gallery/<?=$van["items_pictureOne"]?>" class="card_Img card-img" alt="caravane ">
-        </div>
-        <div class="col-sm-8">
+        foreach($allVan as $van){?>
+          <div class="col-sm-4">
+          <img src="../assets/gallery/<?=$van["items_pictureOne"]?>" class="card_Img card-img" alt="caravane ">
+          </div>
+          <div class="col-sm-8">
           <div class="text-Card card-body">
           <h5 class="card-title"><?= $van['items_title']?></h5>
           <p>prix <?= $van['items_price']?> euros</p>
           <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$van['items_id']?>" value="<?=$van[$idCategory]?>">+ d'info</a>
           </div>
           </div>
-     <?php } ?>
-      </div>
+      <?php } ?>
     </div>
   </div>
+</div>
   
 
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+       <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           </button>
-        </div>
-        <div class="modal-body">
+          </div>
+          <div class="modal-body">
           <img src="/assets/img/vanvert.jpg" alt="">
-        </div>
-        <ul>
-        <li>Tarif</li>
-        <li>Année</li>
-        </ul>
-        <div class="modal-footer">
+          </div>
+          <ul>
+          <li>Tarif</li>
+          <li>Année</li>
+          </ul>
+          <div class="modal-footer">
           <button class="btn btn-primary" type="button"><a class="text-white" href="mailto:nullepart@mozilla.org">Contacter le vendeur</a></button>
           <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
         </div>
-      </div>
     </div>
   </div>
+</div>
 
 
 

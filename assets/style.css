@@ -1,147 +1,155 @@
-h1{
-   font-size: 2rem;
-   margin-bottom: 2rem;
-   color: #1e3d59;
-  
-}
-
-h2{
-    font-size: 1rem;
-    font-family:URW Chancery L, cursive;
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: #1e3d59;
-    
-        
 }
 
-body{
+
+h2 {
+    font-size: 1rem;
+    font-family: URW Chancery L, cursive;
+    color: #1e3d59;
+}
+
+
+body {
     background-color: #f5F0e1;
 }
 
-/* li, ul, ol{list-style: none;} */
 
 
-.inscription{
+.inscription {
 
     font-size: 2rem;
     text-align: center;
     margin-top: 2rem;
 }
 
-.essai{
+
+.essai {
     text-align: center;
     border-bottom: 1px solid #111111;
-   
 }
 
-.btn{
-color: #1e3d59;
+
+.btn {
+    color: #1e3d59;
 }
 
-.imgIndex{
+
+.imgIndex {
     width: 100%;
-
 }
 
 
-.mail{
+.mail {
     color: black;
 }
 
-.imgNav{
+
+.imgNav {
     height: 5rem;
     width: 10rem;
     object-fit: contain;
 }
 
-.row{
+
+.row {
     margin-top: 1rem;
-   
+
 }
 
-.imgArticle1{
+
+.imgArticle1 {
     height: 10rem;
     width: 20rem;
     object-fit: contain;
 }
 
-.imgarticle2{
+
+.imgarticle2 {
     width: 20rem;
     height: 10rem;
     object-fit: contain;
 }
-.imgArticle3{
-    
-   width: 25rem;
-   object-fit: contain;
+
+
+.imgArticle3 {
+
+    width: 25rem;
+    object-fit: contain;
 }
 
-.card_Img{
-    
+
+.card_Img {
+
     margin-top: 3rem;
 }
 
-.text-Card{
+
+.text-Card {
     margin-top: 3rem;
     margin-left: 10rem;
 }
 
-.imgGal1{
+
+.imgGal1 {
     height: 10rem;
     margin-top: 3rem;
 }
 
-.imgConnexion{
+
+.imgConnexion {
     height: 10rem;
 }
 
-.imgFond{
+
+.imgFond {
     background-image: url(../assets/img/fond.jpg);
 }
 
 
-.annonce{
+.annonce {
     font-size: 2rem;
     text-align: center;
     text-decoration: underline;
 }
-.formAnnonce{
-    
-    
+
+
+.formAnnonce {
     height: 30rem;
-    
 }
 
 #imgPreview {
-	width: 200px; 
-	max-height: auto;
-	display: block;
-	margin-bottom: 70px;
-	
+    width: 200px;
+    max-height: auto;
+    display: block;
+    margin-bottom: 70px;
 }
 
 
-.imgFondAnnonce{
+.imgFondAnnonce {
     height: 25rem;
     object-fit: contain;
-    
 }
-.imgFondDepose{
+
+
+.imgFondDepose {
     height: 25rem;
     width: 25rem;
     margin-top: 4rem;
     object-fit: contain;
-    
 }
-.imgFondConnexion{
+
+.imgFondConnexion {
     height: 25rem;
     width: 25rem;
     margin-top: 5rem;
     object-fit: contain;
-  
-    
 }
 
-.imgCrea{
+
+.imgCrea {
     height: 25rem;
     margin-left: 10rem;
     margin-top: 3rem;
@@ -157,136 +165,126 @@ color: #1e3d59;
     max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-    
-  }
-  
-  .site-title {
+}
+
+
+.site-title {
     text-align: center;
     border-bottom: 1px solid #111111;
     margin-bottom: 24px;
-  }
-  
-  .site-title h1 {
+}
+
+.site-title h1 {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 10px;
-    
-    
-  }
-  
-  img {
-    width: 100%;
-  }
+}
 
-  .bgCard{
+
+img {
+    width: 100%;
+}
+
+.bgCard {
     background-color: #f5F0e1;
 }
-     
-  
- 
-  .textH1{
-    font-family:URW Chancery L, cursive;
+
+
+
+.textH1 {
+    font-family: URW Chancery L, cursive;
     letter-spacing: 5px;
     text-align: center;
-  }
+}
 
- 
-  
-  .textNav{
-    font-family:Bradley Hand, cursive;
-    
+
+
+.textNav {
+    font-family: Bradley Hand, cursive;
+
     background-image: url(../assets/img/plage.jpg);
     width: auto;
     height: 20rem;
-    
-    
-  }
+}
 
-  .news{
-      text-align: center;
-      margin-top: 5rem;
-      font-size: 3rem;
-      
-  }
+.news {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 3rem;
 
-  .article{
-      background-color:rgb(247, 247, 234); 
-  }
+}
 
-  footer{
+
+.article {
+    background-color: rgb(247, 247, 234);
+}
+
+footer {
     background-color: #1e3d59;
     margin-top: 5rem;
-  }
+}
 
-.test{
+.test {
     text-align: center;
 }
-.btn{
+
+
+.btn {
     color: black;
 }
 
-/* .header{
-    background-image: url(../assets/img/van.header.jpg);
-    height: 85vh;
-    width: 100%;
-    background-position: bottom; */
-   
-}
-
-.imgDescript{
+.imgDescript {
     width: 30rem;
 }
 
-.photo-opacity img{
+/* opacity pour les photos des annonces sur la page description seulement */
+.photo-opacity img {
 
-filter: opacity(30%);
--webkit-filter: opacity(30%);
+    filter: opacity(30%);
+    -webkit-filter: opacity(30%);
 }
 
-.photo-opacity img:hover{
- 
+.photo-opacity img:hover {
+
     filter: opacity(100%);
     -webkit-filter: opacity(100%);
 }
-h1{
-     
-        animation-duration: 3s;
-        animation-name: slidein;
-        animation-duration: 3s;
 
-} 
-      
-      @keyframes slidein {
-        from {
-          margin-left: 100%;
-          width: 300%;
-        }
-      
-        to {
-          margin-left: 0%;
-          width: 100%;
-        }
-        10% {
-            font-size: 300%;
-            margin-left: 25%;
-            width: 150%;
-          }
-      }
+h1 {
 
-      .text{
-        width: 500px; /* à modifier selon vos besoins */
-        overflow:unset; /* les dépassements seront masqués */
-        word-wrap: break-word;
-        
-      }
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-duration: 3s;
+}
 
-      .clignote {
-        color:red;
-         animation: Test 1s infinite;
-      }
-      @keyframes clignote {  
-        50% { opacity: 0; }
-      }
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    10% {
+        font-size: 300%;
+        margin-left: 25%;
+        width: 150%;
+    }
+}
 
 
+.text {
+    width: 500px;
+    overflow: unset;
+    word-wrap: break-word;
+}
 
+
+.boutton {
+    background-color: #1e3d59;
+    color: white;
+    margin-left: 3%;
+}
