@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once "../controller/navBar.controller.php";
 require_once "../controller/deposeAnnonce.controller.php";
-
 ?>
 
 
@@ -19,7 +17,10 @@ require_once "../controller/deposeAnnonce.controller.php";
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="icon" type="image/png" sizes="500x500" href="/assets/img/fond.jpg">
 </head>
-
+<body>
+<?php
+  include "../view/include/navbar.php";
+?>
  <div class="header"></div>
 
  <?php if ($showForm) { ?>
@@ -33,13 +34,12 @@ require_once "../controller/deposeAnnonce.controller.php";
               } ?>          
   <?php } ?>  
 
- 
-  
+
   
   
              
   <?php
-  require_once "../controller/footer.controller.php";
+     include "../view/include/footer.php";
   ?>
 
   <script src="/assets/script.js"></script>

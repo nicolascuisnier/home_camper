@@ -88,16 +88,17 @@ class nc_items extends DataBase
 
     public function valideItems()
     {
-        $query = "UPDATE `nc_items` SET `items_validate` = 1 WHERE `items_id` = :id_items";
+        $query = "UPDATE `nc_items` SET `items_validate` = 1 WHERE `items_id` = :items_id";
         $validItemsquery = $this->DataBase->prepare($query);
-        $validItemsquery->bindValue(':items_id', PDO::PARAM_STR);
-
-
+        $validItemsquery->bindValue(':items_id', PDO::PARAM_INT);
+      
         if ($validItemsquery->execute()) {
+           
             return true;
         } else {
             return false;
         }
+        
     }
 
 

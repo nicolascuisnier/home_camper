@@ -1,10 +1,7 @@
 <?php
 session_start();
-require_once "../controller/navBar.controller.php";
 require_once "../controller/campingcar.controller.php";
 require_once "../controller/description.controller.php";
-
-
 ?>
 
 <!doctype html>
@@ -21,6 +18,9 @@ require_once "../controller/description.controller.php";
 </head>
 
 <body>
+<?php
+  include "../view/include/navbar.php";
+?>
 <div class="header"></div> 
   <div class="container mt-">
     <div class="site-title">
@@ -33,6 +33,7 @@ require_once "../controller/description.controller.php";
     <div class="bgCard  mb-3 mt-3" style="max-width: 300px h-5">
       <div class="row no-gutters">
 
+      <!-- creation d'une boucle pour afficher les différents élement de la requette -->
       <?php
       foreach($allCampingCar as $campingcar){?>
         <div class="col-sm-4">
@@ -46,44 +47,13 @@ require_once "../controller/description.controller.php";
           </div>
           </div>
      <?php }?>
-
-        
+   
       </div>
     </div>
   </div>
-
-
-  <!-- Modal 1 -->
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body">
-          <img src="/assets/img/campingcar1.jpg" alt="">
-
-        </div>
-        <ul>
-          <li>Tarif</li>
-          <li>Année</li>
-        </ul>
-        <div class="modal-footer">
-          <button class="btn btn-primary" type="button"><a class="text-white" href="mailto:nullepart@mozilla.org">Contacter le vendeur</a></button>
-          <button type="button" class="btn btn-success" data-dismiss="modal">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 
   <?php
-  require_once "../controller/footer.controller.php";
+  include "../view/include/footer.php";
   ?>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

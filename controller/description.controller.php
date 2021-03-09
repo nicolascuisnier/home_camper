@@ -12,4 +12,5 @@ $descriptCaravane = $descriptItemsobjet->descriptItems($idCategory);
 
 
 
-
+$validItemsObjet = new nc_items;
+$validItemsObjet->valideItems();

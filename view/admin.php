@@ -17,129 +17,109 @@ require_once "../controller/admin.controller.php";
 </head>
 
 <body>
-  <div class="header">
-  </div>
+  <?php
+  include "../view/include/navbar.php";
+  ?>
+  <div class="header"></div>
   <div class="text-center">
     <h1>Espace administrateur</h1>
   </div>
 
-  <h1>Annonce à valider</h1>
-  <table class="table table-sm table table-hover text-center">
-  <thead>
-    <tr>
-      <th scope="col">mail du vendeur</th>
-      <th scope="col">id de l'annonce</th>
-      <th scope="col">Titre de l'annonce</th>
-      <th scope="col">Categorie</th>
-      <th scope="col">Plus de détails</th>
-      <th scope="col">Supprimer</th>
-    </tr>
-  </thead>
-  <tbody>
+  <h2 class=" text-center text-danger mt-5 border border-solid w-25">Annonce à valider</h2>
+  <table class="table table-sm table table-hover text-center table-dark">
+    <thead>
+      <tr>
+        <th scope="col">mail du vendeur</th>
+        <th scope="col">id de l'annonce</th>
+        <th scope="col">Titre de l'annonce</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">Plus de détails</th>
+        <th scope="col">Supprimer</th>
+      </tr>
+    </thead>
 
+    <tbody>
+      <?php foreach ($viewAnnoncetoValidateArray as $annonce) { ?>
+        <tr>
+          <td><?= $annonce['user_mail'] ?></td>
+          <td><?= $annonce['items_id'] ?></td>
+          <td><?= $annonce['items_title'] ?></td>
+          <td><?= $annonce['category_name'] ?></td>
+          <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
+          <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
+        </tr>
+      <?php } ?>
 
-
-
-  <?php foreach($viewAnnoncetoValidateArray as $annonce){ ?>
-    <tr>
-      <td><?=$annonce['user_mail']?></td>
-      <td><?=$annonce['items_id']?></td>
-      <td><?=$annonce['items_title']?></td>
-      <td><?=$annonce['category_name']?></td>
-      <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$annonce['items_id']?>">+ d'info</a></td>
-      <td><button type="button" data-toggle="modal"  data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
-      
-    </tr>
-    
- <?php } ?>
-
+    </tbody>
   </table>
-<h1>Annonce validées</h1>
+  </div>
+  </div>
+
+
+
+  </table class="table table-sm table table-hover text-center">
+  <h2 class="text-center text-success mt-5 border border-solid w-25">Annonce validées</h2>
   <table class="table table-sm table table-hover text-center">
-  <thead>
-    <tr>
-      <th scope="col">mail du vendeur</th>
-      <th scope="col">id de l'annonce</th>
-      <th scope="col">Titre de l'annonce</th>
-      <th scope="col">Categorie</th>
-      <th scope="col">Plus de détails</th>
-      <th scope="col">Supprimer</th>
-    </tr>
-  </thead>
-  <tbody>
+    <thead>
+      <tr>
+        <th scope="col">mail du vendeur</th>
+        <th scope="col">id de l'annonce</th>
+        <th scope="col">Titre de l'annonce</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">Plus de détails</th>
+        <th scope="col">Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
 
 
 
 
-  <?php foreach($viewAnnonceValidatedArray as $annonce){ ?>
-    <tr>
-      <td><?=$annonce['user_mail']?></td>
-      <td><?=$annonce['items_id']?></td>
-      <td><?=$annonce['items_title']?></td>
-      <td><?=$annonce['category_name']?></td>
-      <td> <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$annonce['items_id']?>">+ d'info</a></td></td>
-      <td><button type="button" data-toggle="modal"  data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
-      
-    </tr>
-    
- <?php } ?>
+      <?php foreach ($viewAnnonceValidatedArray as $annonce) { ?>
+        <tr>
+          <td class="text-success"><?= $annonce['user_mail'] ?></td>
+          <td class="text-success"><?= $annonce['items_id'] ?></td>
+          <td class="text-success"><?= $annonce['items_title'] ?></td>
+          <td class="text-success"><?= $annonce['category_name'] ?></td>
+          <td><a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
+          <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
 
+        </tr>
+      <?php } ?>
+    </tbody>
   </table>
-
-
- <!-- <form class="items-center" method="post">
- <div class="form-group">
-    <label for="id_items">Annonces</label>
-    <select class="form-control w-50" id="id_items">
-    <option value="0" > Choisir une annonce</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+  </div>
   </div>
 
 
-  <div class="form-group">
-    <label for="login" >Login</label>
-    <input type="text" class="form-control w-50 " id="login">
-  </div>
-  <div class="form-group">
-    <label for="title">Titre de l'annonce</label>
-    <input type="text" class="form-control w-50" id="title">
-  </div>
-  <a type="button" href="../view/valide_itmes.php" class="btn btn-sm btn-outline-dark">Plus d'info</a>
-</form> -->
-
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <p class="text-danger font-weight-bold text-center">Etes vous sur de vouloire supprimer l'annonce?</p>  
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Oui</button>
-        <button type="submit" class="btn btn-danger">Non</button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-danger font-weight-bold text-center">Etes vous sur de vouloire supprimer l'annonce?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">Oui</button>
+          <button type="submit" class="btn btn-danger">Non</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-   
+
   </tbody>
-</table>
-    </div>
+  </table>
+  </div>
   </div>
 
 
   <?php
-  require_once "../controller/footer.controller.php"
+  include "../view/include/footer.php";
   ?>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

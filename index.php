@@ -18,45 +18,11 @@ session_start();
 </head>
 
 <body>
-  <!-- navbarre -->
-  <nav>
-    <div class="textNav nav-bar ">
-    <a class="nav-link text-white " id="Hautdepage"></a>
-      <ul class="nav justify-content-center">
-        <li class="nav-item ">
-          <a class="nav-link text-light  " href="../index.php">Accueil</a>
-        </li>
-        <li>
-          <a class="nav-link text-light "  href="#lesdernieresnews">Les dernières news</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light  " href="../view/caravane.php?id=1">Caravane</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="../view/campingcar.php?id=2">Camping-car</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="../view/van.php?id=3">Van</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="../view/accessoire.php?id=4">Accessoires</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light " type="submit" href="../view/connexion.php" value="">Se connecter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light " href="../view/deposeAnnonce.php">Déposer une annonce</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="../view/admin.php">Admin</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link text-white" href="../view/profil_user.php<?=$_GET['idUser']?>">Profil</a>
-        </li> -->
-      </ul>
-    </div>
-    </div>
-  </nav>
+
+
+<?php
+require_once "controller/navBar.controller.php";
+?>
 
 
   <header>
@@ -90,9 +56,9 @@ session_start();
       </div>
     </div>
   </header>
-  
+
   <div class="position">
-    <h2 class="news" ><i class="font-italic  fas fa-campground"></i> Les dernieres news</h2>
+    <h2 class="news"><i class="font-italic  fas fa-campground"></i> Les dernieres news</h2>
     <a class="nav-link text-white" style="right: 0px;" id="lesdernieresnews"></a>
   </div>
 
@@ -136,11 +102,10 @@ session_start();
       </div>
     </div>
   </div>
-
-  <a class="nav-link text-dark text-right"  href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
- 
+  <a class="nav-link text-dark text-right" href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
 
 
+   <!-- appel du footer via un require_once -->
   <?php
   require_once "controller/footer.controller.php"
   ?>
@@ -148,5 +113,4 @@ session_start();
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-
 </html>

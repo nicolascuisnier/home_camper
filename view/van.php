@@ -1,6 +1,5 @@
 <?php
 session_start();
-  require_once "../controller/navBar.controller.php";
   require_once "../controller/van.controller.php";
   require_once "../controller/description.controller.php";
 ?>
@@ -19,6 +18,9 @@ session_start();
 </head>
 
 <body>
+<?php
+include "../view/include/navbar.php";
+?>
 <div class="header"></div> 
   <div class="container mt-">
     <div class="site-title">
@@ -74,7 +76,7 @@ session_start();
 
 
   <?php
-    require_once "../controller/footer.controller.php";
+    include "../view/include/footer.php";
   ?>
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

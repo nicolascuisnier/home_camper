@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once "../models/database.php";
 require_once "../models/nc_user.php";
@@ -40,13 +39,15 @@ if(isset($_POST["submitButton"])){
     }
  
     if(empty($errorMessage)){
-        header('location:deposeAnnonce.php');
-        echo'Connexion reussie';
+        header('location:../index.php');
+        echo $errorMessage = 'Félicitation vous étés connecter';
     }
     if (count($errorMessage) == 0) { // si il ny a aucune érreur le formulaire disparait
         $showForm = false;
       }
 }
 }   
+
+
 
 ?>

@@ -45,6 +45,7 @@ class nc_user extends DataBase
                 $_SESSION['nc_user'] = [
                     'id' => $userInfos['user_id'],
                     'name' => $userInfos['user_mail'],
+                    'role' => $userInfos['nc_roles'],
                 ];
 
                 return true;
