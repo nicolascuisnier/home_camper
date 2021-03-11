@@ -17,7 +17,7 @@ class nc_user extends DataBase
         $addUserQuery->bindValue(':user_name', $addUser['user_name'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_mail', $addUser['user_mail'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_password', $addUser['user_password'], PDO::PARAM_STR);
-   
+
         //Vérification de la requete et execution
         if ($addUserQuery->execute()) {
             return true;
@@ -82,7 +82,46 @@ class nc_user extends DataBase
 
 
 
-    
+
+    /**
+     * 
+     * Methode permettant d'afficher le profil de user
+     * 
+     * 
+     * @param string je recupére toutes les items du user
+     * 
+     * 
+     */
+    public function viewUser(int $validateValue)
+    {
+
+        $query = " SELECT `nc_user`.`user_id`,`user_name`, `user_mail`, `items_id`, `items_title`, `items_description`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_name`, if (`items_validate`= 1 ,'oui','non')  AS `items_validate`
+        FROM `nc_user` INNER JOIN `nc_items` ON `nc_user`.`user_id` = `nc_items`.`user_id` INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id` WHERE `nc_user`.`user_id`= :user_id  ORDER BY `items_id` DESC";
+
+        $viewAnnonceQuery = $this->DataBase->prepare($query);
+        $viewAnnonceQuery->bindValue(':user_id', $validateValue);
+
+        $viewAnnonceQuery->execute();
+        return $viewAnnonceQuery->fetchAll();
+    }
+
+
+    public function getDetailUser(string $idUser)
+    {
+        $query = "SELECT * FROM `nc_user` WHERE `user_id` = :user_id";
+
+        $getDetailUserQuery = $this->DataBase->prepare($query);
+        $getDetailUserQuery->bindValue(':user_id', $idUser, PDO::PARAM_STR);
+
+        if($getDetailUserQuery->execute())
+        {
+            return $getDetailUserQuery->fetch();
+        } else {
+            return false;
+        }
+
+    }
+
 
 
 }

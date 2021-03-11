@@ -31,7 +31,7 @@ require_once "../controller/connexion.controller.php";
 <div class="container ">
   <div class="site-title">
     <h1>Homecamping.com</h1>
-    <p>Espace connexion</p>
+    <h3>Espace connexion</h3>
   </div>
 </div>
   

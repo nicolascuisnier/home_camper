@@ -25,7 +25,7 @@ include "../view/include/navbar.php";
   <div class="container mt-">
     <div class="site-title">
        <h1>Homecamping</h1>
-         <p>Annonces Van</p>
+         <h3>Annonces Van</h3>
     </div>
   </div>
 

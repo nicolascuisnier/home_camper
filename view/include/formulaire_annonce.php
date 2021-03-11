@@ -63,9 +63,9 @@
 
                             <div class="mt-3 ml-1">
                                 <input type="file" name="fileNumberOne" />
-                                <input type="file" name="fileNumberTwo" />
-                                <input type="file" name="fileNumberThree" />
-                                <div class="mt-3">
+                                <input class="mt-3" type="file" name="fileNumberTwo" />
+                                <input class="mt-3"type="file" name="fileNumberThree" />
+                                <!-- <div class="mt-3"> -->
                                 </div>
                             </div>
                             <button type="submit" name="submit" class="btn btn-success mt-2 mb-3">Envoyer <i class="fas fa-upload"></i></button>

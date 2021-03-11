@@ -39,7 +39,7 @@ require_once "../controller/admin.controller.php"
                 'pictureTwo' => $caravane["items_pictureTwo"],
                 'picturethree' => $caravane["items_pictureThree"]
             ]; { ?>
-            <h1 class="text-center">Descripiton de l'annonce <?= $caravane['items_title'] ?></h1>
+            <h1 class="text-center">Description de l'annonce <?= $caravane['items_title'] ?></h1>
             <div class="container">
                 <h1 class="font-weight-light text-center font-weight-bold  text-lg-left mt-4 mb-0">Photos de l'annonce</h1>
                 <div class="row text-center text-lg-left">
@@ -50,15 +50,18 @@ require_once "../controller/admin.controller.php"
                             continue;
                         }
                     ?>
-                        <div class="photo-opacity ">
-                            <img src="../assets/gallery/<?= $image ?>" class="card_Img card-img" style="display:inline-block; width: 900px" alt="caravane ">
-                            </a>
+                        <div class="zoom">
+                            <div class="card-columns text-center">
+                                <div class="card">
+                                    <img src="../assets/gallery/<?= $image ?>" alt="caravane ">
+                                </div>
+                            </div>
                         </div>
                     <?php   } ?>
                 </div>
             </div>
             <hr>
-            <h1 class="font-weight-light text-center font-weight-bold  mt-4 mb-2 ">Prix</h1>
+            <h1 class="font-weight-light text-center font-weight-bold  ">Prix</h1>
             <p class="text-center"><?= $caravane['items_price'] ?> Euros</p>
             <hr>
             <h1 class="text-center">Description</h1>
@@ -76,12 +79,8 @@ require_once "../controller/admin.controller.php"
                     <form action="../view/description.php?id=<?= $itemId ?>" method="POST">
                         <button type="submit" value="<?= $itemId ?>" name="validateBtn" class="btn btn-success text-center">Valider l'annonce</button>
                         <button type="submit" value="<?= $delItem ?>" name="deleteBtn" class="btn btn-danger text-center">supprimer l'annonce</button>
-                        <!-- <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger text-center">supprimer l'annonce</button> -->
                     </form>
-
                 <?php
-
-
                 }
             } else { ?>
             </div>
@@ -90,25 +89,8 @@ require_once "../controller/admin.controller.php"
             </div>
         <?php  } ?>
         </div>
-        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-danger font-weight-bold text-center">Etes vous sur de vouloire supprimer l'annonce?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="../view/admin.php"><button type="submit" value="<?= $itemIddel ?>"  data-dismiss="modal" class="btn btn-success" >Oui</button></a>
-                        <button type="submit" class="btn btn-danger" data-dismiss="modal"   >Non</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+
+
 
         <?php
         include "../view/include/footer.php";

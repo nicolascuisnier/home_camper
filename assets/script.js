@@ -7,3 +7,13 @@ fileToUpload.addEventListener("change", function () {
 	};
 })
 
+
+<!--
+function agrandirimage()
+{
+image.height="700"
+}
+function reduireimage()
+{
+image.height="90"
+}

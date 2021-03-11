@@ -102,7 +102,7 @@ session_start();
       </div>
     </div>
   </div>
-  <a class="nav-link text-dark pull-right" href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
+  <a class="nav-link text-dark text-right" href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
 
 
   <!-- appel du footer via un require_once -->

@@ -23,7 +23,7 @@ require_once "../controller/creationcompte.controller.php";
   <div class="container mt-">
     <div class="site-title">
       <h1>Homecamping.com</h1>
-      <p>Déposer une annonce</p>
+      <h3>Déposer une annonce</h3>
     </div>
   </div>
 

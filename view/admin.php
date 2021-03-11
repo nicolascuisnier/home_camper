@@ -34,7 +34,7 @@ require_once "../controller/admin.controller.php";
         <th scope="col">Titre de l'annonce</th>
         <th scope="col">Categorie</th>
         <th scope="col">Plus de détails</th>
-        <th scope="col">Supprimer</th>
+       
       </tr>
     </thead>
 
@@ -46,7 +46,7 @@ require_once "../controller/admin.controller.php";
           <td><?= $annonce['items_title'] ?></td>
           <td><?= $annonce['category_name'] ?></td>
           <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
-          <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
+          
         </tr>
       <?php } ?>
 
@@ -67,7 +67,7 @@ require_once "../controller/admin.controller.php";
         <th scope="col">Titre de l'annonce</th>
         <th scope="col">Categorie</th>
         <th scope="col">Plus de détails</th>
-        <th scope="col">Supprimer</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -82,7 +82,7 @@ require_once "../controller/admin.controller.php";
           <td class="text-success"><?= $annonce['items_title'] ?></td>
           <td class="text-success"><?= $annonce['category_name'] ?></td>
           <td><a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
-          <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td>
+          <!-- <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td> -->
 
         </tr>
       <?php } ?>

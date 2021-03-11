@@ -25,7 +25,7 @@ require_once "../controller/materiel.controller.php";
   <div class="container mt-">
     <div class="site-title">
       <h1>Homecamping</h1>
-      <p>Annonces Accessoires</p>
+      <h3>Annonces Accessoires</h3>
     </div>
   </div>
 
