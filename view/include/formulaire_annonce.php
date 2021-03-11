@@ -79,6 +79,6 @@
 
     
     <?php
-    require_once "../controller/footer.controller.php";
+    include "include/footer.php";
     ?>
     

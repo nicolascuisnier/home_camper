@@ -204,7 +204,7 @@ img {
 
     background-image: url(../assets/img/plage.jpg);
     width: auto;
-    height: 20rem;
+    height: 10rem;
 }
 
 .news {
@@ -222,7 +222,7 @@ img {
 footer {
     background-color: #1e3d59;
     margin-top: 5rem;
-    
+
 }
 
 .test {
@@ -251,7 +251,7 @@ footer {
     -webkit-filter: opacity(100%);
 }
 
-h1{
+h1 {
 
     animation-duration: 3s;
     animation-name: slidein;
@@ -277,7 +277,7 @@ h1{
 }
 
 
-.text{
+.text {
     width: 500px;
     overflow: unset;
     word-wrap: break-word;

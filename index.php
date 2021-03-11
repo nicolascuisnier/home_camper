@@ -20,9 +20,9 @@ session_start();
 <body>
 
 
-<?php
-require_once "controller/navBar.controller.php";
-?>
+  <?php
+  include "view/include/navbar.php";
+  ?>
 
 
   <header>
@@ -102,15 +102,16 @@ require_once "controller/navBar.controller.php";
       </div>
     </div>
   </div>
-  <a class="nav-link text-dark text-right" href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
+  <a class="nav-link text-dark pull-right" href="#Hautdepage"><i class="fas fa-arrow-alt-circle-up" style="right:300px"></i> Haut de page</i></a>
 
 
-   <!-- appel du footer via un require_once -->
+  <!-- appel du footer via un require_once -->
   <?php
-  require_once "controller/footer.controller.php"
+  include "view/include/footer.php";
   ?>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
 </html>

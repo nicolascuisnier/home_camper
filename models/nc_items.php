@@ -60,7 +60,14 @@ class nc_items extends DataBase
 
 
 
-
+/**
+ * 
+ * Mhéthode permettant d'avoir la description complete de item
+ * 
+ * 
+ * return array
+ * 
+ */
 
     // Description des items
     public function descriptItems(int $descriptItems)
@@ -85,12 +92,18 @@ class nc_items extends DataBase
 
 
 
-
-    public function valideItems()
+/**
+ * 
+ * Méthode permetant de valider un items
+ * 
+ * return false
+ * 
+ */
+    public function valideItems(int $itemId)
     {
         $query = "UPDATE `nc_items` SET `items_validate` = 1 WHERE `items_id` = :items_id";
         $validItemsquery = $this->DataBase->prepare($query);
-        $validItemsquery->bindValue(':items_id', PDO::PARAM_INT);
+        $validItemsquery->bindValue(':items_id',$itemId, PDO::PARAM_INT);
       
         if ($validItemsquery->execute()) {
            
@@ -109,16 +122,17 @@ class nc_items extends DataBase
      * 
      * return false
      */
-    public function deleteAnnonce()
+    public function deleteAnnonce(int $delItem)
     {
         $query = "DELETE FROM `nc_items` WHERE `nc_items`.`items_id` = :items_id";
         $deleteAnnonceQuery = $this->DataBase->prepare($query);
-        $deleteAnnonceQuery->bindValue(':items_id', PDO::PARAM_STR);
-
+        $deleteAnnonceQuery->bindValue(':items_id', $delItem, PDO::PARAM_INT);
+       
         if ($deleteAnnonceQuery->execute()) {
             return true;
         } else {
             return false;
         }
+      
     }
-}
+ }

@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../controller/profil_user_controller.php";
-
 ?>
 
 
@@ -30,17 +29,6 @@ require_once "../controller/profil_user_controller.php";
    <p class="text-center text-uppercase mb-3 h3">Détails de votre compte</p>
 
    <hr>
-
-   <?php
-   // Nous testons si nous arrivons à obtenir les détails du client sous forme d'un tableau
-   if ($detailsUsertArray) {
-      include 'include/detail_user.php';
-      // si KO, nous indiquons à l'utilisateur que le patient n'est pas présent
-   } else { ?>
-      <p class="h5 text-danger text-center mb-3"></i>Aucune annonce présente</p>
-      
-   <?php
-   } ?>
 
 </div>
 

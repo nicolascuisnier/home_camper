@@ -15,3 +15,7 @@ $viewAnnonceValidatedArray = $viewAnnonceObjet->viewAnnonce(1);
 
 
 
+
+
+
+

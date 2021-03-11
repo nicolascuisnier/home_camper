@@ -5,12 +5,22 @@
 
 $descriptItemsobjet = new nc_items;
 
-$idCategory = $_GET['id'];
+$idCategory = $itemId = $delItem = $_GET['id'];
 
 $descriptCaravane = $descriptItemsobjet->descriptItems($idCategory);
 
 
 
 
-$validItemsObjet = new nc_items;
-$validItemsObjet->valideItems();
+
+if(isset($_POST['deleteBtn'])){
+    $deletItemsObjet = new nc_items;
+    $deletItemsObjet->deleteAnnonce($delItem);
+    header('location: /view/admin.php');
+    
+}
+if(isset($_POST['validateBtn'])){
+    $validItemsObjet = new nc_items;
+    $validItemsObjet->valideItems($itemId);
+    header('location: /view/admin.php');
+}   

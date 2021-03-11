@@ -17,7 +17,7 @@ foreach ($categoryArray as $value) {
 
 
 $errorMessage = [];
-$regexName = "/^[a-z A-Z]+$/";
+$regexName = "/^[a-z A-Zéèê]+$/";
 $regexPrice = "[0-9]{1,}[.,]{0,1}[0-9]{0,2}";
 
 

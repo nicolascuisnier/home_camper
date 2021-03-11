@@ -17,7 +17,7 @@ class nc_user extends DataBase
         $addUserQuery->bindValue(':user_name', $addUser['user_name'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_mail', $addUser['user_mail'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_password', $addUser['user_password'], PDO::PARAM_STR);
-        
+   
         //Vérification de la requete et execution
         if ($addUserQuery->execute()) {
             return true;
@@ -82,25 +82,7 @@ class nc_user extends DataBase
 
 
 
-
     
 
-    public function getDetailsUser(string $idUser)
-    {
-        $query = "SELECT `nc_user`.`user_id`, `user_mail`, `items_title`,`items_id`, `items_price`, `items_pictureOne`, `items_pictureTwo`, `items_pictureThree`, `category_name`, `items_validate`  
-        FROM `nc_user` 
-        INNER JOIN `nc_items` ON `nc_user`.`user_id` = `nc_items`.`user_id` 
-        INNER JOIN nc_category ON `nc_items`.`category_id` = `nc_category`.`category_id`
-        WHERE `nc_user`.`user_id` = :nc_user.user_id";
 
-        $getDetailsUserQuery = $this->DataBase->prepare($query);
-
-        $getDetailsUserQuery->bindValue(':nc_user.user_id', $idUser, PDO::PARAM_STR);
-
-        if ($getDetailsUserQuery->execute()) {
-            return $getDetailsUserQuery->fetch();
-        } else {
-            return false;
-        }
-    }
 }

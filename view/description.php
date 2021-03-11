@@ -2,7 +2,7 @@
 session_start();
 require_once "../controller/description.controller.php";
 require_once "../controller/caravane.controller.php";
-
+require_once "../controller/admin.controller.php"
 ?>
 
 
@@ -24,62 +24,94 @@ require_once "../controller/caravane.controller.php";
 </head>
 
 <body>
-<?php
+    <?php
     include "../view/include/navbar.php";
-?>
-    <div class="header"></div> 
+    ?>
+    <div class="header"></div>
     <div class="Text-center mt-5">
 
     </div>
     <?php
-    foreach ($descriptCaravane as $caravane)
-        $imageGallery  = [
-            'pictureOne' => $caravane["items_pictureOne"],
-            'pictureTwo' => $caravane["items_pictureTwo"],
-            'picturethree' => $caravane["items_pictureThree"]
-        ]; { ?>
-        <h1 class="text-center">Descripiton de l'annonce <?= $caravane['items_title'] ?></h1>
-        <div class="container">
-            <h1 class="font-weight-light text-center font-weight-bold  text-lg-left mt-4 mb-0">Photos de l'annonce</h1>
-            <div class="row text-center text-lg-left">
-            <!-- boucle permetant d'afficher le nimbre d'image présente  -->
-                <?php
-                foreach ($imageGallery as $image) {
-                    if ($image == NULL) {
-                        continue;
-                    }
-                ?>
-                    <div class="photo-opacity ">
-                        <img src="../assets/gallery/<?= $image ?>" class="card_Img card-img" style="display:inline-block; width: 900px" alt="caravane ">
-                        </a>
-                    </div>
-                <?php   } ?>
+    if (!empty($descriptCaravane)) {
+        foreach ($descriptCaravane as $caravane)
+            $imageGallery  = [
+                'pictureOne' => $caravane["items_pictureOne"],
+                'pictureTwo' => $caravane["items_pictureTwo"],
+                'picturethree' => $caravane["items_pictureThree"]
+            ]; { ?>
+            <h1 class="text-center">Descripiton de l'annonce <?= $caravane['items_title'] ?></h1>
+            <div class="container">
+                <h1 class="font-weight-light text-center font-weight-bold  text-lg-left mt-4 mb-0">Photos de l'annonce</h1>
+                <div class="row text-center text-lg-left">
+                    <!-- boucle permetant d'afficher le nombre d'image présente  -->
+                    <?php
+                    foreach ($imageGallery as $image) {
+                        if ($image == NULL) {
+                            continue;
+                        }
+                    ?>
+                        <div class="photo-opacity ">
+                            <img src="../assets/gallery/<?= $image ?>" class="card_Img card-img" style="display:inline-block; width: 900px" alt="caravane ">
+                            </a>
+                        </div>
+                    <?php   } ?>
+                </div>
             </div>
-        </div>
-        <hr>
-        <h1 class="font-weight-light text-center font-weight-bold  mt-4 mb-2 ">Prix</h1>
-        <p class="text-center"><?= $caravane['items_price'] ?> Euros</p>
-        <hr>
-        <h1 class="text-center">Description</h1>
-        <p class="text-center"><?= $caravane['items_description'] ?> description</p>
-        <h1 class="font-weight-light text-center font-weight-bold   mt-4 mb-5 ">Contacter le vendeur</h1>
-        <!-- <?php } ?> -->
-        <form>
-            <input class="boutton " type="button" value="Retour aux annonces" onclick="history.go(-1)">
-        </form>
+            <hr>
+            <h1 class="font-weight-light text-center font-weight-bold  mt-4 mb-2 ">Prix</h1>
+            <p class="text-center"><?= $caravane['items_price'] ?> Euros</p>
+            <hr>
+            <h1 class="text-center">Description</h1>
+            <p class="text-center"><?= $caravane['items_description'] ?> description</p>
 
-<div class="text-center">
-        <?php
-        if (!empty($_SESSION['nc_user']['id']) && $_SESSION['nc_user']['role'] == 'admin') { ?>
-        <form action="../view/admin.php" method="POST" >
-            <a href="../view/description.php"><button type="button" class="btn btn-success text-center"    >Valider l'annonce</button></a>
-            <button type="button" class="btn btn-danger text-center">Refuser l'annonce</button>
+            <!-- <?php } ?> -->
+            <form class="text-right mr-3">
+                <input class="boutton text-right" type="button" value="Retour aux annonces" onclick="history.go(-1)">
             </form>
+
+            <div class="text-center">
+                <?php
+
+                if (!empty($_SESSION['nc_user']['id']) && $_SESSION['nc_user']['role'] == 'admin') { ?>
+                    <form action="../view/description.php?id=<?= $itemId ?>" method="POST">
+                        <button type="submit" value="<?= $itemId ?>" name="validateBtn" class="btn btn-success text-center">Valider l'annonce</button>
+                        <button type="submit" value="<?= $delItem ?>" name="deleteBtn" class="btn btn-danger text-center">supprimer l'annonce</button>
+                        <!-- <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger text-center">supprimer l'annonce</button> -->
+                    </form>
+
+                <?php
+
+
+                }
+            } else { ?>
+            </div>
+            <div class="alert alert-danger mt-5" role="alert">
+                <p class="text-center">Annonce inexistante !</p>
+            </div>
         <?php  } ?>
         </div>
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger font-weight-bold text-center">Etes vous sur de vouloire supprimer l'annonce?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="../view/admin.php"><button type="submit" value="<?= $itemIddel ?>"  data-dismiss="modal" class="btn btn-success" >Oui</button></a>
+                        <button type="submit" class="btn btn-danger" data-dismiss="modal"   >Non</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
 
         <?php
-            include "../view/include/footer.php";
+        include "../view/include/footer.php";
         ?>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

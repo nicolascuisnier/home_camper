@@ -25,7 +25,7 @@ require_once "../controller/description.controller.php";
   <div class="container mt-">
     <div class="site-title">
       <h1>Homecamping</h1>
-      <p>Annonce camping-car</p>
+      <p>Annonces Camping-car</p>
     </div>
   </div>
 
