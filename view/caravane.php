@@ -44,7 +44,7 @@ require_once "../controller/description.controller.php";
           <h5 class="card-title"><?= $caravane['items_title']?></h5>
           <p>prix <?= $caravane['items_price']?> euros</p>
           <p><a class="text-dark" href="<?=$caravane['user_mail']?>">Contacter le vendeur</a></p>
-          <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$caravane['items_id']?>" value="<?=$caravane[$idCategory]?>">+ d'info</a>
+          <a type="button" class="boutton btn text-white" href="../view/description.php?id=<?=$caravane['items_id']?>" value="<?=$caravane[$idCategory]?>">+ d'info</a>
           </div>
           </div>
      <?php }?>

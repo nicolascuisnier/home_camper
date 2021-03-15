@@ -64,7 +64,7 @@ require_once "../controller/creationcompte.controller.php";
           </div>
 
 
-          <button type="submit" name="submit" class="btn btn-primary mb-3">Envoyer</button>
+          <button type="submit" name="submit" class="boutton   btn mb-3">Envoyer</button>
           <div class="mt-5">
             <p>En créant mon compte je reconnais avoir lu et accepté les Conditions Générales de Vente et les Conditions Générales d‘Utilisation, et je confirme être âgé d’au moins 18 ans.</p>
           </div>

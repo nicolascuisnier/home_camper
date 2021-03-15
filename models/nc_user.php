@@ -5,7 +5,7 @@ class nc_user extends DataBase
 {
 
     // Création de la fonction avec comme paramètre un array $addUser
-    public function addUser(array $addUser)
+    public function addUser( $addUser)
     {
         // Création de la requete
         $query = 'INSERT INTO `nc_user` (`user_name`, `user_mail`, `user_password`) VALUES (:user_name, :user_mail, :user_password)';
@@ -16,14 +16,15 @@ class nc_user extends DataBase
         // Je bind la value des marqueurs nominatif
         $addUserQuery->bindValue(':user_name', $addUser['user_name'], PDO::PARAM_STR);
         $addUserQuery->bindValue(':user_mail', $addUser['user_mail'], PDO::PARAM_STR);
-        $addUserQuery->bindValue(':user_password', $addUser['user_password'], PDO::PARAM_STR);
+        $addUserQuery->bindValue(':user_password',$addUser['user_password'], PDO::PARAM_STR);
 
-        //Vérification de la requete et execution
+        //Vérification de la requete et execution,
         if ($addUserQuery->execute()) {
             return true;
         } else {
             return false;
         }
+        
     }
 
 
@@ -44,8 +45,10 @@ class nc_user extends DataBase
 
                 $_SESSION['nc_user'] = [
                     'id' => $userInfos['user_id'],
-                    'name' => $userInfos['user_mail'],
-                    'role' => $userInfos['nc_roles'],
+                    'name' => $userInfos['user_name'],
+                    'mail' =>$userInfos['user_mail'],
+                    'password' =>$userInfos['user_password'],
+                    'role' => $userInfos['nc_roles']
                 ];
 
                 return true;
@@ -106,7 +109,11 @@ class nc_user extends DataBase
     }
 
 
-    public function getDetailUser(string $idUser)
+
+
+
+
+    public function getDetailUser(int $idUser)
     {
         $query = "SELECT * FROM `nc_user` WHERE `user_id` = :user_id";
 
@@ -114,7 +121,9 @@ class nc_user extends DataBase
         $getDetailUserQuery->bindValue(':user_id', $idUser, PDO::PARAM_STR);
 
         if($getDetailUserQuery->execute())
+       
         {
+            
             return $getDetailUserQuery->fetch();
         } else {
             return false;
@@ -124,4 +133,48 @@ class nc_user extends DataBase
 
 
 
+    /**
+     * 
+     * méthode permettant de modifier les informations d'un user
+     * 
+     * @return array
+     */
+    public function updateUser( $arrayUpdate)
+    {
+        var_dump($arrayUpdate);
+      $query =" UPDATE `nc_user` 
+      SET `user_name`=:user_name , `user_mail`=:user_mail, `user_password`=:user_password 
+      WHERE `user_id`=:user_id ";
+
+      $updateUserQuery = $this->DataBase->prepare($query);
+    
+
+      $updateUserQuery->bindValue(':user_name',  $arrayUpdate['login'], PDO::PARAM_STR);
+      $updateUserQuery->bindValue(':user_mail',  $arrayUpdate['mail'], PDO::PARAM_STR);
+      $updateUserQuery->bindValue(':user_password',password_hash($arrayUpdate['Password'], PASSWORD_DEFAULT) , PDO::PARAM_STR);
+      $updateUserQuery->bindValue(':user_id',  $arrayUpdate['id'], PDO::PARAM_STR);
+    
+    
+      if($updateUserQuery->execute()){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    public function deleteUser($deletUser)
+    {
+       $query = "DELETE FROM `nc_user` WHERE `user_id` = :user_id ";
+       $deletUserQuery=$this->DataBase->prepare($query);
+       $deletUserQuery->bindValue(':user_id', $deletUser, PDO::PARAM_STR);
+
+       if($deletUserQuery->execute()){
+            return true;
+       }else{
+           return false;
+       }
+    }
+
 }
+
+

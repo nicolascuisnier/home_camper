@@ -41,7 +41,7 @@ include "../view/include/navbar.php";
           <div class="text-Card card-body">
           <h5 class="card-title"><?= $van['items_title']?></h5>
           <p>prix <?= $van['items_price']?> euros</p>
-          <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?=$van['items_id']?>" value="<?=$van[$idCategory]?>">+ d'info</a>
+          <a type="button" class="boutton  btn text-white" href="../view/description.php?id=<?=$van['items_id']?>" value="<?=$van[$idCategory]?>">+ d'info</a>
           </div>
           </div>
       <?php } ?>

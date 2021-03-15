@@ -43,7 +43,7 @@ require_once "../controller/materiel.controller.php";
             <div class="text-Card card-body">
               <h5 class="card-title"><?= $materiel['items_title'] ?></h5>
               <p>prix <?= $materiel['items_price'] ?> euros</p>
-              <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $materiel['items_id'] ?>" value="<?= $materiel[$idCategory] ?>">+ d'info</a>
+              <a type="button" class="boutton  btn text-white" href="../view/description.php?id=<?= $materiel['items_id'] ?>" value="<?= $materiel[$idCategory] ?>">+ d'info</a>
             </div>
           </div>
         <?php } ?>

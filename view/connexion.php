@@ -64,7 +64,7 @@ require_once "../controller/connexion.controller.php";
                                     <div>
                                     </div>
                                     
-                                    <button type="submit" name="submitButton" class="btn btn-primary mt-3 mb-3">Envoyer</button>
+                                    <button type="submit" name="submitButton" class="boutton btn mt-3 mb-3">Envoyer</button>
                             </form>
                             <?php }  ?> 
                           
