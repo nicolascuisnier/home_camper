@@ -3,7 +3,7 @@ require_once "../models/database.php";
 require_once "../models/nc_user.php";
 require_once "../models/nc_items.php";
 
-
+echo 'test';
 // Mise en place d'un t'ableau d'erreur
 $errors = [];
 
@@ -27,10 +27,11 @@ $messages = [];
 
 
 // modification du profil de l'utilisateur
-var_dump($_POST);
+
   if(isset($_POST['updateBtn'])){
+    
       $arrayUpdate = [
-          'id' => $_SESSION['nc_user']['id'],
+        'id' => $_SESSION['nc_user']['id'],
         'login' => $_POST['login'],
         'mail' => $_POST['mail'],
         'Password' => !empty($_POST['verifPassword']) && !empty($_POST['password']) ? $_POST['verifPassword'] : $_SESSION['nc_user']['password']
@@ -40,17 +41,18 @@ var_dump($_POST);
     $updateUserObjet->updateUser($arrayUpdate);
   }else{
       return $messages = 'erreur';
-     
+      
   }
-
 
 
 
   if(isset($_POST['deleteBtn'])){
-  $deleteUserObjet = new nc_user;
-  $deleteUserObjet->deleteUser($_SESSION['nc_user']['id']);
-}else{
-    return $messages = 'erreur';
-
-
+    var_dump($_POST['deleteBtn']);
+    $deletUserObjet = new nc_user;
+    $deletUserObjet->deleteUser($_SESSION['nc_user']['id']);
+    // header('location: /view/admin.php');
+     
+  }else{
+    return $messages = 'no';
   }
+ 

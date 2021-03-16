@@ -141,7 +141,7 @@ class nc_user extends DataBase
      */
     public function updateUser( $arrayUpdate)
     {
-        var_dump($arrayUpdate);
+       
       $query =" UPDATE `nc_user` 
       SET `user_name`=:user_name , `user_mail`=:user_mail, `user_password`=:user_password 
       WHERE `user_id`=:user_id ";
@@ -162,19 +162,25 @@ class nc_user extends DataBase
       }
     }
 
+
+
+
+
     public function deleteUser($deletUser)
     {
-       $query = "DELETE FROM `nc_user` WHERE `user_id` = :user_id ";
-       $deletUserQuery=$this->DataBase->prepare($query);
+        var_dump($deletUser);
+       $query = " DELETE FROM `nc_user` WHERE `user_id` = :user_id ";
+       $deletUserQuery = $this->DataBase->prepare($query);
        $deletUserQuery->bindValue(':user_id', $deletUser, PDO::PARAM_STR);
-
+     
        if($deletUserQuery->execute()){
             return true;
        }else{
            return false;
        }
+       
+}
     }
 
-}
 
 

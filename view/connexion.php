@@ -4,6 +4,7 @@ session_destroy();
 session_start();
 require_once "../controller/connexion.controller.php";
 require_once "../controller/connexion.controller.php";
+require_once "../controller/profil_user_controller.php";
 ?>
 
 <!doctype html>
@@ -70,7 +71,7 @@ require_once "../controller/connexion.controller.php";
                           
                         </div>
                     </div>
-                    <a class="mt-5" href="Mot de pass">Mot de passe oublier</a>
+                    <a class="mt-5" href="/view/profil_user.php">Mot de passe oublier</a>
                     <p>Envie de nous rejoindre ?<a href="creationdecompte.php">Crée un compte</a></p>
                 </div>
             </div>

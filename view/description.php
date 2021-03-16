@@ -78,7 +78,7 @@ require_once "../controller/admin.controller.php"
                 if (!empty($_SESSION['nc_user']['id']) && $_SESSION['nc_user']['role'] == 'admin') { ?>
                     <form action="../view/description.php?id=<?= $itemId ?>" method="POST">
                         <button type="submit" value="<?= $itemId ?>" name="validateBtn" class="btn btn-success text-center">Valider l'annonce</button>
-                        <button type="submit" value="<?= $delItem ?>" name="deleteBtn" class="btn btn-danger text-center">supprimer l'annonce</button>
+                        <button type="submit" value="<?= $delItem ?>" name="deleteBtn" class="btn btn-danger text-center">Supprimer l'annonce</button>
                     </form>
                 <?php
                 }

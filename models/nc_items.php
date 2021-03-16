@@ -124,7 +124,7 @@ class nc_items extends DataBase
      */
     public function deleteAnnonce(int $delItem)
     {
-        $query = "DELETE FROM `nc_items` WHERE `nc_items`.`items_id` = :items_id";
+        $query = " DELETE FROM `nc_items` WHERE `nc_items`.`items_id` = :items_id";
         $deleteAnnonceQuery = $this->DataBase->prepare($query);
         $deleteAnnonceQuery->bindValue(':items_id', $delItem, PDO::PARAM_INT);
        

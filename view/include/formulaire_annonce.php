@@ -3,7 +3,7 @@
     <div class="container mt-">
         <div class="site-title">
             <h1>Homecamping.com</h1>
-            <p>Déposer votre annonce</p>
+            <h3>Déposer votre annonce</h3>
         </div>
     </div>
 

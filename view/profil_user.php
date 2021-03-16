@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION);
 require_once "../controller/profil_user_controller.php";
 require_once "../controller/detail_user.controller.php";
 $viewUserArray = getUserAnnonces();
@@ -53,7 +52,7 @@ $viewUserDetails = getUserDetails();
           </div>
           
             <button type="submit" value="<?=$_SESSION['nc_user']['id']?>" name="updateBtn" class="btn btn-success text-center">modifier mes informations</button>
-            <button type="submit" value="<?=$_SESSION['nc_user']['id']?>"  name="deleteBtn" class="btn btn-danger text-center">supprimer mon compte</button>
+            <button type="submit" value="<?=$_SESSION['nc_user']['id']?>" name="deleteBtn" class="btn btn-danger text-center">supprimer mon compte</button>
           </form>
         
         <hr>

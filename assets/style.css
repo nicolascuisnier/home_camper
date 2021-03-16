@@ -203,7 +203,7 @@ img {
     font-family: Bradley Hand, cursive;
     background-color: #1e3d59;
     width: auto;
-    height: 5rem;
+    /* height: 5rem; */
 }
 
 .news {
