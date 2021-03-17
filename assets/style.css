@@ -303,4 +303,19 @@ h1 {
     height:300px;
     }
 
+    #imgPreview {
+        width: 200px; 
+        max-height: auto;
+        display: block;
+        margin-bottom: 70px;
+        
+    }
+
+    .test1{
+        max-width: 100%;
+        display: flex;
+        justify-content:center;
+        
+    }
+
     

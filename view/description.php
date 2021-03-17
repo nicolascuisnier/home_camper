@@ -78,7 +78,7 @@ require_once "../controller/admin.controller.php"
                 if (!empty($_SESSION['nc_user']['id']) && $_SESSION['nc_user']['role'] == 'admin') { ?>
                     <form action="../view/description.php?id=<?= $itemId ?>" method="POST">
                         <button type="submit" value="<?= $itemId ?>" name="validateBtn" class="btn btn-success text-center">Valider l'annonce</button>
-                        <button type="submit" value="<?= $delItem ?>" name="deleteBtn" class="btn btn-danger text-center">Supprimer l'annonce</button>
+                        <button type="button" data-toggle="modal" data-target="#confirm-delete" class="btn btn-danger text-center">supprimer l'annonce</button>
                     </form>
                 <?php
                 }
@@ -88,6 +88,27 @@ require_once "../controller/admin.controller.php"
                 <p class="text-center">Annonce inexistante !</p>
             </div>
         <?php  } ?>
+        </div>
+        <div class="modal" id="confirm-delete" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Suppression de l'annonce</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="text-danger">voulez-vous vraiment suprimer l'annonce?</br></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="boutton btn text-white" >Non</button>
+                <form action="" method="POST">
+                <button type="submit" value="<?= $delItem ?>" name="deleteBtn" class="btn btn-danger">Supprimer</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
 
 

@@ -28,9 +28,7 @@ require_once "../controller/deposeAnnonce.controller.php";
               <?php
               if(isset($_SESSION['nc_user'])){
                 include "../view/include/formulaire_annonce.php";
-              } else {
-                include "../view/include/image.connexion.php";
-              
+               
               } ?>          
   <?php } ?>  
 

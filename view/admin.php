@@ -45,7 +45,7 @@ require_once "../controller/admin.controller.php";
           <td><?= $annonce['items_id'] ?></td>
           <td><?= $annonce['items_title'] ?></td>
           <td><?= $annonce['category_name'] ?></td>
-          <td> <a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
+          <td> <a type="button" class="btn btn text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
           
         </tr>
       <?php } ?>
@@ -81,7 +81,7 @@ require_once "../controller/admin.controller.php";
           <td class="text-success"><?= $annonce['items_id'] ?></td>
           <td class="text-success"><?= $annonce['items_title'] ?></td>
           <td class="text-success"><?= $annonce['category_name'] ?></td>
-          <td><a type="button" class="btn btn-dark text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
+          <td><a type="button" class=" btn btn-success  text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
           <!-- <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td> -->
 
         </tr>

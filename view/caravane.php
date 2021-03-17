@@ -26,6 +26,7 @@ require_once "../controller/description.controller.php";
     <div class="site-title">
       <h1>Homecamping</h1>
       <h3>Annonces Caravane</h>
+      <p><?=$message['vue']?? '' ?></p>
     </div>
   </div>
 

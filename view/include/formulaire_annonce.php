@@ -34,8 +34,6 @@
                             <div class="text-danger"><span><?= isset($errorMessage["selectCategory"]) ? $errorMessage["selectCategory"] : "" ?></span>
                             </div>
 
-
-
                             <div class="mt-3 ">
                                 <label for="titleAd"></label>
                                 <input type="text" class="form-control" class="w-75" id="titlejkjk" placeholder="Titre de l'annonce" name="titleAd" aria-describedby="titleAD" value="<?= isset($_POST["titleAd"]) ? htmlspecialchars($_POST["titleAd"]) : ""  ?>">
@@ -43,7 +41,6 @@
                             <div class=" text-danger">
                                 <span><?= isset($errorMessage["titleAd"]) ? $errorMessage["titleAd"] : "" ?></span>
                             </div>
-
 
                             <div class="mt-3 ">
                                 <label for="description"></label>
@@ -62,13 +59,12 @@
                             </div>
 
                             <div class="mt-3 ml-1">
-                                <input type="file" name="fileNumberOne" />
-                                <input class="mt-3" type="file" name="fileNumberTwo" />
+                                <input type="file" name="fileNumberOne" id="fileToUpload"/>
+                                <input class="mt-3" type="file" name="fileNumberTwo"  />
                                 <input class="mt-3"type="file" name="fileNumberThree" />
-                                <!-- <div class="mt-3"> -->
                                 </div>
                             </div>
-                            <button type="submit" name="submit" class="btn btn-success mt-2 mb-3">Envoyer <i class="fas fa-upload"></i></button>
+                            <button type="submit" name="submit" class="boutton btn btn-success mt-2 mb-3">Envoyer <i class="fas fa-upload"></i></button>
                         </div>
                     </form>
                 </div>
@@ -76,7 +72,7 @@
         </div>
     </div>
 
-
+<script src="/assets/script.js"></script>
     
     <?php
     include "include/footer.php";
