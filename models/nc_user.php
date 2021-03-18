@@ -151,7 +151,7 @@ class nc_user extends DataBase
 
       $updateUserQuery->bindValue(':user_name',  $arrayUpdate['login'], PDO::PARAM_STR);
       $updateUserQuery->bindValue(':user_mail',  $arrayUpdate['mail'], PDO::PARAM_STR);
-      $updateUserQuery->bindValue(':user_password',password_hash($arrayUpdate['Password'], PASSWORD_DEFAULT) , PDO::PARAM_STR);
+      $updateUserQuery->bindValue(':user_password',$arrayUpdate['Password'], PDO::PARAM_STR);
       $updateUserQuery->bindValue(':user_id',  $arrayUpdate['id'], PDO::PARAM_STR);
     
     

@@ -34,7 +34,7 @@ if (isset($_POST['updateBtn'])) {
     'id' => $_SESSION['nc_user']['id'],
     'login' => $_POST['login'],
     'mail' => $_POST['mail'],
-    'Password' => !empty($_POST['verifPassword']) && !empty($_POST['password']) ? $_POST['verifPassword'] : $_SESSION['nc_user']['password']
+    'Password' => !empty($_POST['verifPassword']) && !empty($_POST['password']) ? password_hash($_POST['verifPassword'],PASSWORD_DEFAULT) : $_SESSION['nc_user']['password']
   ];
 
   $updateUserObjet = new nc_user;
