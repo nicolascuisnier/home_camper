@@ -69,14 +69,15 @@ body {
 
 .imgarticle2 {
     width: 20rem;
-    height: 10rem;
+  
     object-fit: contain;
 }
 
 
 .imgArticle3 {
 
-    width: 25rem;
+    width: 20rem;
+    height: 25rem;
     object-fit: contain;
 }
 
@@ -203,7 +204,7 @@ img {
     font-family: Bradley Hand, cursive;
     background-color: #1e3d59;
     width: auto;
-    /* height: 5rem; */
+   
 }
 
 .news {
@@ -220,7 +221,7 @@ img {
 
 footer {
     background-color: #1e3d59;
-    margin-top: 5rem;
+  
 
 }
 
@@ -310,8 +311,9 @@ h1 {
         margin-bottom: 70px;
         
     }
+    
 
-    .test1{
+    .form{
         max-width: 100%;
         display: flex;
         justify-content:center;

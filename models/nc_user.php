@@ -168,7 +168,6 @@ class nc_user extends DataBase
 
     public function deleteUser($deletUser)
     {
-        var_dump($deletUser);
        $query = " DELETE FROM `nc_user` WHERE `user_id` = :user_id ";
        $deletUserQuery = $this->DataBase->prepare($query);
        $deletUserQuery->bindValue(':user_id', $deletUser, PDO::PARAM_STR);

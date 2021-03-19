@@ -2,6 +2,7 @@
 session_start();
 require_once "../controller/profil_user_controller.php";
 require_once "../controller/detail_user.controller.php";
+require_once "../controller/admin.controller.php";
 $viewUserArray = getUserAnnonces();
 $viewUserDetails = getUserDetails();
 ?>
@@ -34,10 +35,15 @@ $viewUserDetails = getUserDetails();
           <div class="text-center"><i class="fas fa-info-circle p-2 logo"></i></div>
           <p class="text-center text-uppercase mb-3 h3">Détails de mon profil</p>
           <hr>
-
-          <form action="" method="POST" class="test1">
+          <p class="h5 text-center text-success"><?= $messages['updateUser'] ?? '' ?></p>
+          <?php
+          if(!$update){?>
+          
+          <form action="" method="POST" class="form">
+         
             <div class="">
               <div class="form-group  w-100">
+             
                 <label for="login">Nom d'utilisateur</label>
                 <input type="text" class="form-control" id="login" name="login" value="<?= $viewUserDetails['user_name'] ?>">
               </div>
@@ -54,12 +60,12 @@ $viewUserDetails = getUserDetails();
                 <input type="password" class="form-control" name="verifPassword" id="password">
               </div>
               <div class="d-flex justify-content-center mr-2">
-                <button type="submit" value="<?= $_SESSION['nc_user']['id'] ?>" name="updateBtn" class="boutton btn btn-success text-white">modifier mes informations</button>
-
+                <button type="submit" value="<?=$_SESSION['nc_user']['id'] ?>" name="updateBtn" class="boutton btn btn-success text-white">modifier mes informations</button>
                 <button type="button" data-toggle="modal" data-target="#confirm-delete" class="boutton btn btn-danger text-white">supprimer mon compte</button>
               </div>
             </div>
           </form>
+      <?php } ?>
         </div>
 
 
@@ -73,6 +79,7 @@ $viewUserDetails = getUserDetails();
               <th scope="col">Titre de l'annonce</th>
               <th scope="col">Categorie</th>
               <th scope="col">Annonce validées</th>
+              <th scope="col">Supprimer mon annonce</th>
             </tr>
           </thead>
           <tbody>
@@ -81,12 +88,15 @@ $viewUserDetails = getUserDetails();
                 <td><?= $user['items_title'] ?></td>
                 <td><?= $user['category_name'] ?></td>
                 <td><?= $user['items_validate'] ?></td>
+                <td><button type="button" data-toggle="modal" data-target="#deletItems<?=$user['items_id'] ?>" class="boutton  btn btn-danger text-center text-white">supprimer l'annonce</button></td>
               </tr>
             <?php } ?>
           </tbody>
         </table>
       </div>
     </div>
+
+    <!-- modal utilisateur suppression de compte -->
     <div class="modal" id="confirm-delete" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -98,7 +108,7 @@ $viewUserDetails = getUserDetails();
           </div>
           <div class="modal-body">
             <p class="text-danger">voulez-vous vraiment suprimer votre compte?</br></p>
-            <p class="text-danger">Toutes vos donées seront suprimer!!!</p>
+            <p class="text-danger">Toutes vos donées seront supprimer!!!</p>
           </div>
           <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="boutton btn btn-success text-white">Non</button>
@@ -109,6 +119,32 @@ $viewUserDetails = getUserDetails();
         </div>
       </div>
     </div>
+
+
+    <?php
+    foreach($viewUserArray  as $delItem){ ?>
+    <div class="modal" id="deletItems<?=$delItem["items_id"]?>" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Suppression de votre annonces</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger">voulez-vous vraiment supprimer votre annonce? : <?=$delItem['items_title']?></br></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="boutton btn btn-success text-white">Non</button>
+            <form action="../view/profil_user.php?id=<?=$delItem['user_id'] ?>" method="POST">
+              <button type="submit" value="<?=$delItem["items_id"]?>" name="supItemsBtn" class="boutton btn btn-danger text-white">Supprimer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+ <?php   } ?>
   </div>
   </div>
   <?php

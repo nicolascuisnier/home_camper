@@ -11,9 +11,9 @@ require_once "../controller/admin.controller.php";
   <title>Admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/assets/style.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@ require_once "../controller/admin.controller.php";
         <th scope="col">Titre de l'annonce</th>
         <th scope="col">Categorie</th>
         <th scope="col">Plus de détails</th>
-       
+
       </tr>
     </thead>
 
@@ -46,7 +46,7 @@ require_once "../controller/admin.controller.php";
           <td><?= $annonce['items_title'] ?></td>
           <td><?= $annonce['category_name'] ?></td>
           <td> <a type="button" class="btn btn text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
-          
+
         </tr>
       <?php } ?>
 
@@ -67,7 +67,6 @@ require_once "../controller/admin.controller.php";
         <th scope="col">Titre de l'annonce</th>
         <th scope="col">Categorie</th>
         <th scope="col">Plus de détails</th>
-        
       </tr>
     </thead>
     <tbody>
@@ -82,8 +81,6 @@ require_once "../controller/admin.controller.php";
           <td class="text-success"><?= $annonce['items_title'] ?></td>
           <td class="text-success"><?= $annonce['category_name'] ?></td>
           <td><a type="button" class=" btn btn-success  text-white" href="../view/description.php?id=<?= $annonce['items_id'] ?>">+ d'info</a></td>
-          <!-- <td><button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button></td> -->
-
         </tr>
       <?php } ?>
     </tbody>
@@ -105,7 +102,7 @@ require_once "../controller/admin.controller.php";
           <p class="text-danger font-weight-bold text-center">Etes vous sur de vouloire supprimer l'annonce?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">Oui</button>
+          <button type="button" class="btn btn-success text-white" data-dismiss="modal">Oui</button>
           <button type="submit" class="btn btn-danger">Non</button>
         </div>
       </div>
@@ -114,9 +111,6 @@ require_once "../controller/admin.controller.php";
 
   </tbody>
   </table>
-  </div>
-  </div>
-
 
   <?php
   include "../view/include/footer.php";
@@ -125,5 +119,4 @@ require_once "../controller/admin.controller.php";
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-
 </html>

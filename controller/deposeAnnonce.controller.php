@@ -3,31 +3,23 @@ require_once "../models/database.php";
 require_once "../models/nc_category.php";
 require_once "../models/nc_items.php";
 
+$errorMessage = [];
+$regexName = "/^[a-z A-Zéèê]+$/";
+$regexPrice = "[0-9]{1,}[.,]{0,1}[0-9]{0,2}";
+$addItems = false;
+
+
 
 
 $category = new nc_category;
-
 $categoryArray = $category->selectCategory();
-
 $selectCategory = [];
 foreach ($categoryArray as $value) {
   $selectCategory[$value['category_id']] = $value['category_Name'];
 }
 
 
-
-$errorMessage = [];
-$regexName = "/^[a-z A-Zéèê]+$/";
-$regexPrice = "[0-9]{1,}[.,]{0,1}[0-9]{0,2}";
-
-
-
-$showForm = true;
-
-
 if (isset($_POST["submit"])) {
-
-
 
   if (isset($_POST["selectCategory"])) {
     if (empty($_POST["selectCategory"])) {
@@ -38,21 +30,17 @@ if (isset($_POST["submit"])) {
     }
   }
 
-
-
   if (isset($_POST["titleAd"])) {
     if (!preg_match($regexName, $_POST["titleAd"])) {
       $errorMessage["titleAd"] = "Veuillez choisir un titre correct (ex = caravane)"; //si le titre n'est pas renseigner il y a un méssage d'erreur.
     }
   }
 
-
   if (isset($_POST["description"])) {
     if (!preg_match($regexName, $_POST["description"])) {
       $errorMessage["description"] = "Veuillez saisir une descritption"; //si le titre n'est pas renseigner il y a un méssage d'erreur.
     }
   }
-
 
   if (isset($_POST["price"])) {
     if (empty($_POST["price"])) {
@@ -61,11 +49,6 @@ if (isset($_POST["submit"])) {
   }
 
 
-
-
-  if (count($errorMessage) == 0) { // si il ny a aucune érreur le formulaire disparait
-    $showForm = false;
-  }
   $dossier_photos = "../assets/gallery/"; // "gallery/ correspond à l'endroit ou les imgages seront stocker
   $uploadOk = true;
   $goodImage = "";
@@ -117,7 +100,7 @@ if (isset($_POST["submit"])) {
   }
 
 
-  if (empty($errorMessage)) {
+  // if (empty($errorMessage)) {
 
     // Création de l'objet user
     $addItemsObjet = new nc_items;
@@ -134,17 +117,16 @@ if (isset($_POST["submit"])) {
       'items_pictureThree' => count($newImageNameFileList) >= 3 ?  $newImageNameFileList[2] : NULL
     
     ];
+    
 
     if ($addItemsObjet->addItems($additems)) {
-      $errorMessage['additems'] = 'Félicitation votre annonce a bien été crée';
-      // header('location:/index.php');
+      $addItems = true;
+      $errorMessage['additems'] = 'Félicitation votre annonce a bien été crée </br> votre annonce serat bientot valider';
+      
 
     } else {
       $errorMessage['additems'] = 'Erreur lors de la création de l\'annonce !! ';
     }
   }
 
-  if (count($errorMessage) == 0) { // si il ny a aucune érreur le formulaire disparait
-    $showForm = false;
-  }
-}
+  

@@ -31,7 +31,7 @@
             <a class="nav-link text-light " type="submit" href="../view/connexion.php" value="">Se déconnecter <i class="fas fa-user-slash"></i> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light " type="submit" href="../view/profil_user.php" >profil <i class="far fa-address-card"></i></a>
+            <a class="nav-link text-light " type="submit" href="../view/profil_user.php" > <i class="far fa-address-card"></i></a>
           </li>
           
         <?php

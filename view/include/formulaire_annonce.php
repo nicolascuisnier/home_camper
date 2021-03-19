@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-sm-4">
 
-                    <form class="form" method="POST" action="deposeAnnonce.php" name="fichier" enctype="multipart/form-data">
+                    <form class="form1" method="POST" action="deposeAnnonce.php" name="fichier" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="selectCategory"></label>
                             <select class="form-control" name="selectCategory" id="selectCategory">
@@ -64,7 +64,7 @@
                                 <input class="mt-3"type="file" name="fileNumberThree" />
                                 </div>
                             </div>
-                            <button type="submit" name="submit" class="boutton btn btn-success mt-2 mb-3">Envoyer <i class="fas fa-upload"></i></button>
+                            <button type="submit" name="submit" class="boutton btn btn-success  mb-3">Envoyer <i class="fas fa-upload"></i></button>
                         </div>
                     </form>
                 </div>

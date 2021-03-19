@@ -31,7 +31,7 @@ require_once "../controller/profil_user_controller.php";
 ?>
 <div class="container ">
   <div class="site-title">
-    <h1>Homecamping.com</h1>
+    <h1>Homecamping</h1>
     <h3>Espace connexion</h3>
   </div>
 </div>
@@ -39,7 +39,7 @@ require_once "../controller/profil_user_controller.php";
     <div class="Connexion">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-sm">
                     <div class=" mt-5 text-center" style="width: 25rem ">
                         <div class="card-body">
                             <h5 class="card-title">Bonjour!</h5>
@@ -47,7 +47,7 @@ require_once "../controller/profil_user_controller.php";
                             <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
                             <?php if ($showForm) { ?>
                             <form method="POST" action="connexion.php">
-                                <div class="form">
+                                <div class="form1">
                                     <div class="form-group">
                                         <label for="mail">Adresse mail</label>
                                         <input type="email" name="mail" class="form-control" id="mail" aria-describedby="emailHelp" value="<?= isset($_POST['mail']) ? $_POST['mail'] : "" ?>">
@@ -64,7 +64,6 @@ require_once "../controller/profil_user_controller.php";
                                     </div>
                                     <div>
                                     </div>
-                                    
                                     <button type="submit" name="submitButton" class="boutton btn mt-3 mb-3">Envoyer</button>
                             </form>
                             <?php }  ?> 

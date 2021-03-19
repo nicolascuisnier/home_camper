@@ -8,10 +8,6 @@
             </div>
         </div>
 
-
-
-
-
         <div class="form-group">
             <label for="password">Mot de passe</label>
             <input type="password" name="password" class="form-control" id="password">
@@ -19,8 +15,6 @@
                 <span><?= isset($errorMessage["password"]) ? $errorMessage["password"] : "" ?></span>
             </div>
         </div>
-        <div>
-        </div>
-
+    </div>
         <button type="submit" name="submitButton" class="btn btn-primary mt-3 mb-3">Envoyer</button>
 </form>

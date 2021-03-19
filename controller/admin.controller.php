@@ -12,11 +12,8 @@ $viewAnnonceValidatedArray = $viewAnnonceObjet->viewAnnonce(1);
 
 if(isset($_POST['supItems'])){
     $deletItemsObjet = new nc_items;
-    $deletItemsObjet->deleteAnnonce($delItem);
-    // header('location: /view/admin.php');
-
+   $deletItemsObjet->deleteAnnonce($delItem);
 }
-
 
 
 

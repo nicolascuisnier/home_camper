@@ -8,7 +8,8 @@ $errors = [];
 
 // Mise en place d'un tableau de message
 $messages = [];
-
+$update = false;
+$delete = false;
 
 // Création d'une fonction pour afficher le détail de l'utilisateur
 function getUserDetails()
@@ -24,6 +25,9 @@ function getUserAnnonces()
   $viewUserObjet = new nc_user;
   $viewUserArray = $viewUserObjet->viewUser($_SESSION['nc_user']['id']);
   return $viewUserArray;
+  
+
+  $messages['viewUser'] ='Aucine annonces';
 }
 
 // modification du profil de l'utilisateur
@@ -38,10 +42,9 @@ if (isset($_POST['updateBtn'])) {
   ];
 
   $updateUserObjet = new nc_user;
-  $updateUserObjet->updateUser($arrayUpdate);
-
-} else {
-  $message = 'toto';
+  $updateUserObjet->updateUser($arrayUpdate); 
+  $update = true;
+  $messages['updateUser'] = " Modification de vos données reussie";
 }
 
 
@@ -51,10 +54,16 @@ if (isset($_POST['supBtn'])) {
   $deletUserObjet->deleteUser($_SESSION['nc_user']['id']);
   session_destroy();
   header('location: /index.php');
-
-} else {
-  $messages = 'no';
+}else{
+  $messages['deleteuse'] = "Une erreur est survenue";
 }
+
+
+if(isset($_POST['supItemsBtn'])){
+  $deletItemsObjet = new nc_items;
+  $deletItemsObjet->deleteAnnonce($_POST['supItemsBtn']);
+}
+
 
 
 

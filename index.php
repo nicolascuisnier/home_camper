@@ -71,7 +71,7 @@ session_start();
         <p>Association originale…
           C’est en 1962 que Sud Aviation, constructeur de caravelles basé à Trignac, en Loire-Atlantique, décide de se diversifier dans la construction de caravanes.
           Un bureau d’études avec des dessinateurs riches de leur expérience aéronautique lance les premières caravanes Caravelair, associant déjà créativité et originalité…
-          50 ans après un parcours ininterrompu d’innovations, Caravelair a su s’imposer comme le leader français de la Caravane et perpétue son savoir-faire en mettant à votre disposition des caravanes de qualité, pensées et construites pour vous.</p>
+          a su s’imposer comme le leader français de la Caravane et perpétue son savoir-faire en mettant à votre disposition des caravanes de qualité, pensées et construites pour vous.</p>
         <img class="imgArticle1" src="/assets/img/caravane 2021.jpg" alt="tente">
         <div class="mt-3">
           <img class="imgArticle1" src="/assets/img/caravane20211.jpg" alt="tente">
@@ -86,8 +86,7 @@ session_start();
         <p> L’intégral PRESTIGE DESIGN EDITION I790LC
           l’intégral PRESTIGE DESIGN EDITION I790LJ
           Ces 2 intégraux haut de gamme sont proposés sur châssis FIAT DUCATO 160CV – châssis AL-KO avec un PTAC de 4,5t et une charge utile de 850kg. Ces 2 intégraux « poids-lourd » vous permettront de voyager sans limite !
-          Intérieurement, tout a été prévu pour voyager confortablement: grand salon face-face, très belle cuisine au design arrondi, meuble bar, espace pour grande TV dans le salon, 2nde TV et système audio indépendant dans la chambre, chauffage ALDE, réservoir d’eau de grande capacité.
-          Pour en savoir plus,…
+         très belle cuisine au design arrondi, meuble bar, espace pour grande TV dans le salon, 
           cliquez ci-dessous pour voir la vidéo</p>
         <iframe width="300" height="315" src="https://www.youtube.com/embed/ARRMe_9g_8A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -98,7 +97,7 @@ session_start();
       <div class="article col-sm mt-5 text-center border border-dark img-responsive shadow ml-2 mr-2">
         <h1>Les Vans</h1>
         <p>Dans quelques heures, il prend la route pour six semaines et environ 6000 km. Direction la péninsule ibérique, dont il a prévu de parcourir tout le littoral à bord d’un Free 540 Blue Evolution. Une occasion en or de s’adonner à son sport favori – dans des eaux à 12-13° en cette saison – et nous régaler de ses images de rêve.
-          « J’ai eu l’occasion de faire un road-trip en France cet été, au cours duquel j’ai découvert ce que j’appelle des pépites cachées, des coins de nature incroyables dont j’aurais voulu pouvoir profiter encore plus pleinement. J’ai trouvé terriblement frustrant de devoir rejoindre l’hôtel tous les soirs. En fourgon, cette fois, je vais pouvoir m’immerger absolument, vivre l’expérience à 100 %, sans rupture. »</p> <img class="imgArticle3" src="/assets/img/vanouvert.jpg" alt="camping car">
+          « J’ai eu l’occasion de faire un road-trip en France cet été, au cours duquel j’ai découvert ce que j’appelle des pépites cachées, des coins de nature incroyables dont j’aurais voulu pouvoir profiter encore plus pleinement. J’ai trouvé terriblement frustrant de devoir rejoindre l’hôtel tous les soirs.  »</p> <img class="imgArticle3" src="/assets/img/vanouvert.jpg" alt="camping car">
       </div>
     </div>
   </div>
